@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title
+      / = title
+    = render :partial => 'layouts/stylesheets'
+    = render :partial => 'layouts/javascript'
+  %body
+    .container_6
+      = yield 
+      .clear
+      = debug(params) if Rails.env.development?
