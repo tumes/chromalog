@@ -1,0 +1,9 @@
+%h1 New instrument
+
+= simple_form_for @instrument do |f|
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+    = f.error :name
+  = f.submit 'Create instrument'

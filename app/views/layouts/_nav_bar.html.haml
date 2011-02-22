@@ -1,0 +1,20 @@
+.grid_6
+  %ul.nav.main
+    - if anybody_signed_in?
+      %li
+        %a{ :href => "#" } Log stuff
+        %ul
+          %li
+            %a{ :href => "#" } Log run
+          %li
+            %a{ :href => "#" } Log column
+          %li
+            %a{ :href => "#" } Log maintenance
+      %li
+        %a{ :href => "#" } Add stuff
+        %ul
+          %li
+            %a{ :href => new_instrument_path } Instrument
+      %li.secondary
+        %a{ :href => destroy_user_session_path } Sign out
+.clear

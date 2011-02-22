@@ -1,5 +1,9 @@
 Chromalog::Application.routes.draw do
   
+  resources :instruments
+
+  devise_for :users
+
   get "pages/home"
 
   root :to => "pages#home"
