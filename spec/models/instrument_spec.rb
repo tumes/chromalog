@@ -7,4 +7,6 @@ describe Instrument do
   
   it { should validate_presence_of(:name) }
   it { should validate_uniqueness_of(:name) }
+  it { should validate_presence_of(:analytical_methods) }
+  
 end

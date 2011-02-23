@@ -50,6 +50,7 @@ GEM
     celerity (0.8.8)
     childprocess (0.1.7)
       ffi (~> 0.6.3)
+    cocoon (1.0.0)
     configuration (1.2.0)
     cucumber (0.10.0)
       builder (>= 2.1.2)
@@ -96,6 +97,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    nested_form (0.0.0)
     nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -169,6 +171,7 @@ DEPENDENCIES
   autotest-growl
   autotest-rails-pure
   capybara
+  cocoon
   cucumber-rails
   database_cleaner
   devise
@@ -178,6 +181,7 @@ DEPENDENCIES
   inherited_resources (= 1.1.2)
   jquery-rails
   launchy
+  nested_form
   rails (= 3.0.4)
   rspec
   rspec-rails

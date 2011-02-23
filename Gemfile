@@ -7,6 +7,8 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'inherited_resources', '1.1.2'
 gem 'simple_form'
+gem 'nested_form'
+gem 'cocoon'
 
 group :development do
   gem 'hpricot'
