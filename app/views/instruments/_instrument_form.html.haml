@@ -5,9 +5,11 @@
     = f.text_field :name
     = f.error :name
   %p
-    = f.simple_fields_for :analytical_methods do |a_method|
-      = render 'analytical_method_fields', :f => a_method
+    = f.simple_fields_for :analytical_methods do |analytical_method|
+      = render 'analytical_method_fields', :f => analytical_method
+    = f.error :analytical_methods
     .links
       =link_to_add_association 'Add method', f, :analytical_methods
-    = @instrument.errors[:analytical_methods][0]
   = f.submit 'Create instrument'
+
+  
