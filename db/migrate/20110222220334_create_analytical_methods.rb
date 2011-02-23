@@ -2,6 +2,7 @@ class CreateAnalyticalMethods < ActiveRecord::Migration
   def self.up
     create_table :analytical_methods do |t|
       t.string :name
+      t.integer :instrument_id
 
       t.timestamps
     end

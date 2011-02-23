@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110222220334) do
 
   create_table "analytical_methods", :force => true do |t|
     t.string   "name"
+    t.integer  "instrument_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
