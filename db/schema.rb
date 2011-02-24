@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20110222220334) do
 
   create_table "analytes", :force => true do |t|
     t.string   "name"
+    t.integer  "analytical_method_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
