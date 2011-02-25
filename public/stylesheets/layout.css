@@ -537,3 +537,5 @@ input.search.button {
 /*Form styling*/
 span.error { color: red;}
 .hint { font-style: italic; }
+#analyte-fields { margin-left: 10px; }
+#analyte-links { margin-left: 10px; margin-bottom: 10px;}
