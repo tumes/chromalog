@@ -7,7 +7,7 @@ describe Instrument do
   
   it { should validate_presence_of(:name) }
   it { should validate_uniqueness_of(:name) }
-  it { should validate_presence_of(:analytical_methods).with_message(/include at least one method/) }
+  it { should validate_presence_of(:analytical_methods).with_message(/include at least one method/) }  
   
   it "should ignore blank analytical methods" do
     lambda do

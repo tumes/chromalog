@@ -5,8 +5,13 @@ Factory.define :user do |user|
   user.password_confirmation "testpass"
 end
 
+Factory.define :analyte do |analyte|
+  analyte.name "Analyte"
+end
+
 Factory.define :analytical_method do |analytical_method|
   analytical_method.name "Method"
+  analytical_method.analytes [Factory(:analyte)]
 end
 
 Factory.define :instrument do |instrument|
