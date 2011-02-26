@@ -1,4 +1,4 @@
 .nested-fields{ :id => 'analyte-fields' }
-  = f.label 'Analyte name'
-  = f.text_field :name
-  = link_to_remove_association 'Remove analyte', f
+  = f.label 'Analyte'
+  = f.text_field :name, :size => 26
+  = link_to_remove_association (image_tag('minus.png', :height => '15', :class => 'minus')), f
