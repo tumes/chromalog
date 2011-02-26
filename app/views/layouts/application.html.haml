@@ -2,8 +2,7 @@
 %html
   %head
     %meta{ :name => 'viewport', :content => 'width=500'} 
-    %title
-      / = title
+    %title Chromalog | #{ yield(:title) }
     = render :partial => 'layouts/stylesheets'
     = render :partial => 'layouts/javascript'
   %body

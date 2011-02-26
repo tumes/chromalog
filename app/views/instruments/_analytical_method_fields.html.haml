@@ -3,8 +3,8 @@
   = f.text_field :name
   = link_to_remove_association 'Remove method', f
   = f.simple_fields_for :analytes do |analyte|
-    = render 'analyte_fields', :f => analyte
-  %br= f.error :analytes
+    = render 'analyte_fields', :f => analyte 
+  = f.error :analytes 
   .links{ :id => 'analyte-links' }
     = link_to_add_association 'Add analyte', f, :analytes
 

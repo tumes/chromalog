@@ -15,13 +15,13 @@ $(document).ready(function() {
   });
 
   $('.remove_fields.dynamic').live('click', function() {
-    $(this).closest(".nested-fields").remove();
+    $(this).closest(".nested-fields").slideUp(200, this.remove);
     return false;
   });
 
   $('.remove_fields.existing').live('click', function() {
     $(this).prev("input[type=hidden]").val("1");
-    $(this).closest(".nested-fields").hide();
+    $(this).closest(".nested-fields").slideUp(200, this.hide);
     return false;
   });
 
