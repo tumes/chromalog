@@ -1,5 +1,7 @@
 Chromalog::Application.routes.draw do
   
+  resources :maintenance_events
+
   resources :instruments
 
   devise_for :users

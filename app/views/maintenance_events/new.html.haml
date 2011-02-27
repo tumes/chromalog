@@ -1,0 +1,10 @@
+%h1 Add a maintenance event
+
+= simple_form_for @maintenance_event do |f|
+  = f.input :instrument_id, :collection => Instrument.all, :as => :select
+  = f.input :user_id, :collection => User.all, :as => :select
+  = f.input :date
+  = f.input :problem
+  = f.input :maintenance_performed
+  = f.input :result
+  = f.button :submit

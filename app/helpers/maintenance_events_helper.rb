@@ -1,0 +1,2 @@
+module MaintenanceEventsHelper
+end
