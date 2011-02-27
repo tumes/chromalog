@@ -1,5 +1,7 @@
 Chromalog::Application.routes.draw do
   
+  resources :chromatographic_columns
+
   resources :maintenance_events
 
   resources :instruments

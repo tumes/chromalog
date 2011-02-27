@@ -1,0 +1,2 @@
+class ChromatographicColumnsController < ApplicationController
+end

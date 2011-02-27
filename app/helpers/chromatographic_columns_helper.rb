@@ -1,0 +1,2 @@
+module ChromatographicColumnsHelper
+end
