@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110226223553) do
+ActiveRecord::Schema.define(:version => 20110227062333) do
 
   create_table "analytes", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(:version => 20110226223553) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "chromatographic_columns", :force => true do |t|
+    t.string   "name"
+    t.integer  "instrument_id"
+    t.string   "brand"
+    t.text     "description"
+    t.string   "serial"
+    t.date     "received"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chromatographic_columns", ["name"], :name => "index_chromatographic_columns_on_name", :unique => true
 
   create_table "instruments", :force => true do |t|
     t.string   "name"

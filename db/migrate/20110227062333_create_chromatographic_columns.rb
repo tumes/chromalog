@@ -11,6 +11,7 @@ class CreateChromatographicColumns < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :chromatographic_columns, :name, :unique => true
   end
 
   def self.down
