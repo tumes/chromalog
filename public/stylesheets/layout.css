@@ -541,3 +541,29 @@ span.error { color: red;}
 #analyte-links { margin-left: 43px; margin-bottom: 10px;}
 
 img.minus { margin-bottom: -3px;}
+
+/*A container that looks like a polaroid for information snapshots. The proportions are even right.*/
+.polaroid-border {
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 19px 87px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+}
+
+.polaroid-block{
+  background: #EDEDED;
+  padding: 13px;
+  min-height: 300px;
+  -moz-box-shadow: inset 0 0 2px #888;
+  -webkit-box-shadow: inset 0 0 2px#888;
+  box-shadow: inner 0 0 2px #888;
+}
+
+.polaroid-block h2 {
+  margin-top: 0px;
+	font-weight: bold;
+  letter-spacing: -0.09em;
+}
