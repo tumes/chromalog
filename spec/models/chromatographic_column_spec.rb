@@ -1,12 +1,15 @@
 require 'spec_helper'
 
 describe ChromatographicColumn do
+  subject { Factory(:chromatographic_column) }
+  
   it { should belong_to(:instrument) }
   
   it { should validate_presence_of(:name) }
   it { should allow_mass_assignment_of(:name) }
   
   it { should validate_presence_of(:instrument_id) }
+  it { should validate_numericality_of(:instrument_id) }
   
   it { should validate_presence_of(:brand) }
   it { should allow_mass_assignment_of(:brand) }

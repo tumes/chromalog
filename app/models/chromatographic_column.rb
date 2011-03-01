@@ -5,4 +5,5 @@ class ChromatographicColumn < ActiveRecord::Base
   validates :name, :presence => true,
                    :uniqueness => { :case_sensitive => false }
   validates_presence_of :instrument_id, :brand, :description, :serial, :received
+  validates_numericality_of :instrument_id
 end

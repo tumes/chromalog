@@ -4,4 +4,5 @@ class MaintenanceEvent < ActiveRecord::Base
   belongs_to :user
   
   validates_presence_of :instrument_id, :date, :problem, :maintenance_performed, :user_id, :result
+  validates_numericality_of :instrument_id, :user_id
 end
