@@ -1,0 +1,17 @@
+= simple_form_for @maintenance_event do |f|
+  = f.input :instrument_id, :collection => Instrument.all, :as => :select
+  = f.input :user_id, :label => "Technician", :collection => User.all, :as => :select
+  = f.input :date
+  %p
+    = f.label :problem
+    %br/
+    = f.text_area :problem, :rows => 2, :cols => 40 
+  %p
+    = f.label :maintenance_performed
+    %br/
+    = f.text_area :maintenance_performed, :rows => 2, :cols => 40
+  %p
+    = f.label :result
+    %br/
+    = f.text_area :result, :rows => 2, :cols => 40
+  = f.submit @maintenance_event.new_record? ? 'Log maintenance event' : 'Update maintenance event'

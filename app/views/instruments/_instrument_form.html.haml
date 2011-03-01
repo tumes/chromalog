@@ -10,8 +10,7 @@
     = f.error :analytical_methods
     .links
       =link_to_add_association 'Add method', f, :analytical_methods
-  = f.submit 'Create instrument'
+  = f.submit @instrument.new_record? ? 'Create instrument' : 'Update Instrument'
   
-=@instrument.errors
 
   

@@ -1,12 +1,3 @@
 %h1 New column
 
-= simple_form_for @chromatographic_column do |f|
-  = f.input :name
-  = f.input :instrument_id, :collection => Instrument.all, :as => :select
-  %h2 Add dynamic method association select here!
-  = f.input :brand
-  = f.input :description
-  = f.input :serial
-  = f.input :received
-  = f.input :notes
-  = f.submit 'Add column'
+= render :partial => 'chromatographic_columns/chromatographic_column_form' 
