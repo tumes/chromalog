@@ -1,0 +1,2 @@
+module RunLogsHelper
+end

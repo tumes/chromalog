@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110227062333) do
+ActiveRecord::Schema.define(:version => 20110301204015) do
 
   create_table "analytes", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(:version => 20110227062333) do
   create_table "analytical_methods", :force => true do |t|
     t.string   "name"
     t.integer  "instrument_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "area_counts", :force => true do |t|
+    t.integer  "calibration_level_id"
+    t.integer  "area"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "calibration_levels", :force => true do |t|
+    t.integer  "run_log_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,6 +68,17 @@ ActiveRecord::Schema.define(:version => 20110227062333) do
     t.text     "maintenance_performed"
     t.integer  "user_id"
     t.text     "result"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "run_logs", :force => true do |t|
+    t.integer  "instrument_id"
+    t.integer  "analytical_method_id"
+    t.integer  "chromatographic_column_id"
+    t.date     "run_date"
+    t.integer  "pressure"
+    t.integer  "flow_rate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
