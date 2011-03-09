@@ -565,6 +565,17 @@ img.minus { margin-bottom: -3px;}
 
 .polaroid-block h2 {
   margin-top: 0px;
+  margin-bottom: 0px;
 	font-weight: bold;
   letter-spacing: -0.09em;
+}
+
+/*Playing with multi-page forms*/
+
+.display-none {
+display:none;
+}
+
+.block#level {
+display:block;
 }
