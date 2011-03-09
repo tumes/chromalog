@@ -1,6 +1,10 @@
 Chromalog::Application.routes.draw do
   
-  resources :run_logs
+  resources :run_logs do
+    collection do
+      get 'intro'
+    end
+  end
 
   resources :chromatographic_columns
 

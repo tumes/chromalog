@@ -8,6 +8,7 @@
     = f.simple_fields_for :analytical_methods do |analytical_method|
       = render 'analytical_method_fields', :f => analytical_method
     = f.error :analytical_methods
+    %div{:id=>"new-methods"}
     .links
       =link_to_add_association 'Add method', f, :analytical_methods
   = f.submit @instrument.new_record? ? 'Create instrument' : 'Update Instrument'
