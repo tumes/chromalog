@@ -1,30 +1,4 @@
 %h1 Create a run log
 
--counter = 1
-
-%div{ :id => "level#{counter}" }
-  #polaroid-border
-    #polaroid-block
-      level
-      = counter.to_i
-      %h2= "#{@instrument.name} #{@method.name}"
-      - @method.analytes.each do |analyte|
-        = analyte.name
-        %b area
-        %br/
-      %a{ :id => "next1", :href => "#" } Next
-
-- ( params[:levels].to_i - 1 ).times do
-  - counter += 1
-  %div{ :id => "level#{counter}", :class => "display-none"}
-    #polaroid-border
-      #polaroid-block
-        level
-        = counter.to_i
-        %h2= "#{@instrument.name} #{@method.name}"
-        - @method.analytes.each do |analyte|
-          = analyte.name
-          %b area
-          %br/
-        %a{ :id => "next#{counter.to_i}", :href => "#" } Next
-        %a{ :id => "back#{counter.to_i}", :href => "#" } Back    
+= render :partial => 'run_logs/calibration_level', :collection => @calibration_levels
+  

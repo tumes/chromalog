@@ -1,0 +1,11 @@
+%div{ :id => "level#{calibration_level_counter + 1 }", :class => "#{"display-none" if calibration_level_counter > 0}"}
+  #polaroid-border
+    #polaroid-block
+      %h2= "#{@instrument.name} #{@method.name}"
+      - @method.analytes.each do |analyte|
+        = analyte.name
+        %b area
+        %br/
+      %a{ :id => "next#{calibration_level_counter + 1}", :href => "#" } Next
+      - if calibration_level_counter > 0
+        %a{ :id => "back#{calibration_level_counter + 1}", :href => "#" } Back

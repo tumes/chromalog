@@ -8,8 +8,9 @@ class RunLogsController < InheritedResources::Base
   def new
     @instrument = Instrument.find(params[:instrument])
     @method = AnalyticalMethod.find(params[:method])
-    new!
-    @levels = params[:levels].to_i.times{ @run_log.calibration_levels.build }
+    @run_log = RunLog.new
+    params[:levels].to_i.times{ @run_log.calibration_levels.build }
+    @calibration_levels = @run_log.calibration_levels
   end
   
   def update_method_menu
