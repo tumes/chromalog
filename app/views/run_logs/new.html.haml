@@ -2,9 +2,9 @@
 
 -counter = 1
 
-%div{ :id => "level#{counter}", :class => "block"}
-  .polaroid-border
-    .polaroid-block
+%div{ :id => "level#{counter}" }
+  #polaroid-border
+    #polaroid-block
       level
       = counter.to_i
       %h2= "#{@instrument.name} #{@method.name}"
@@ -16,9 +16,9 @@
 
 - ( params[:levels].to_i - 1 ).times do
   - counter += 1
-  .polaroid-border
-    .polaroid-block
-      %div{ :id => "level#{counter}", :class => "display-none"}
+  %div{ :id => "level#{counter}", :class => "display-none"}
+    #polaroid-border
+      #polaroid-block
         level
         = counter.to_i
         %h2= "#{@instrument.name} #{@method.name}"
