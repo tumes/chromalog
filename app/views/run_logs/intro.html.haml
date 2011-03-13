@@ -4,5 +4,5 @@
   = label_tag(:method, "Method")
   = select_tag 'method', options_for_select(@methods.collect{ |m| [m.name, m.id] })
   = label_tag(:levels, "Levels")
-  = text_field_tag(:levels, 3)
+  = text_field_tag(:levels, 3, :size => 2)
   = submit_tag("Start run log")
