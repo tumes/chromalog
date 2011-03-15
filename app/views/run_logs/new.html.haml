@@ -1,3 +1,19 @@
 %h1 Create a run log
 
-= render :partial => 'run_logs/calibration_level', :collection => @calibration_levels
+= simple_form_for @run_log do |f|
+  = f.hidden_field :instrument_id, :value => params[:instrument]
+  = f.hidden_field :analytical_method_id, :value => params[:method]
+  = f.hidden_field :chromatographic_column_id, :value => params[:column]
+  = f.input :run_date
+  %p 
+    Pressure and flow rate: 
+    = f.text_field :pressure, :as => :string, :size => 3
+    @
+    = f.text_field :flow_rate, :as => :string, :size => 3
+    mL/min
+  
+  = render :partial => 'run_logs/calibration_level', :collection => @levels, :locals => { :f => f }
+  
+  = f.submit
+  
+= @run_log.errors

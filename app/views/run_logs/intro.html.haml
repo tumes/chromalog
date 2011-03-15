@@ -3,6 +3,8 @@
   = select_tag 'instrument', options_for_select(@instruments.collect{ |i| [i.name, i.id] })
   = label_tag(:method, "Method")
   = select_tag 'method', options_for_select(@methods.collect{ |m| [m.name, m.id] })
+  = label_tag(:column, "Column")
+  = select_tag 'column', options_for_select(@columns.collect{ |c| [c.name, c.id] })
   = label_tag(:levels, "Levels")
   = text_field_tag(:levels, 3, :size => 2)
   = submit_tag("Start run log")

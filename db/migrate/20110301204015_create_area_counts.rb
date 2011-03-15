@@ -3,6 +3,7 @@ class CreateAreaCounts < ActiveRecord::Migration
     create_table :area_counts do |t|
       t.integer :calibration_level_id
       t.integer :area
+      t.string :analyte
 
       t.timestamps
     end

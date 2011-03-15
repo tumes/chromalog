@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110301204015) do
   create_table "area_counts", :force => true do |t|
     t.integer  "calibration_level_id"
     t.integer  "area"
+    t.string   "analyte"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

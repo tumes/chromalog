@@ -12,7 +12,7 @@ class CreateRunLogs < ActiveRecord::Migration
     end
   end
 
-  def self.down
+  def self.down 
     drop_table :run_logs
   end
 end
