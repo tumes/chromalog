@@ -3,6 +3,7 @@ class CreateChromatographicColumns < ActiveRecord::Migration
     create_table :chromatographic_columns do |t|
       t.string :name
       t.integer :instrument_id
+      t.integer :analytical_method_id
       t.string :brand
       t.text :description
       t.string :serial

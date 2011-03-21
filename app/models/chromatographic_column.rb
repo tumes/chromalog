@@ -1,7 +1,7 @@
 class ChromatographicColumn < ActiveRecord::Base
-  attr_accessible :instrument_id, :name, :brand, :description, :serial, :received, :notes
+  attr_accessible :instrument_id, :name, :brand, :description, :serial, :received, :notes, :analytical_method_id
   belongs_to :instrument
-  has_and_belongs_to_many :analytical_methods
+  belongs_to :analytical_method
   
   validates :name, :presence => true,
                    :uniqueness => { :case_sensitive => false }

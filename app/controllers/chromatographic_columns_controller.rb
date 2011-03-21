@@ -8,4 +8,5 @@ class ChromatographicColumnsController < InheritedResources::Base
   def update
     update!(:notice => 'Column successfull edited') { chromatographic_columns_path }
   end
+  
 end

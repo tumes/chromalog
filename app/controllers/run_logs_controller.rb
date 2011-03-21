@@ -28,4 +28,11 @@ class RunLogsController < InheritedResources::Base
     end
   end
   
+  def for_chromatographic_column_id
+    @dynamic_columns = ChromatographicColumn.find(:all, :conditions => ["analytical_method_id = ?", params[:id]])
+    respond_to do |format|
+      format.json { render :json => @dynamic_columns }
+    end
+  end
+  
 end

@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20110301204015) do
   create_table "chromatographic_columns", :force => true do |t|
     t.string   "name"
     t.integer  "instrument_id"
+    t.integer  "analytical_method_id"
     t.string   "brand"
     t.text     "description"
     t.string   "serial"

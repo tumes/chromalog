@@ -1,7 +1,7 @@
 class AnalyticalMethod < ActiveRecord::Base
   belongs_to :instrument
   has_many :analytes
-  has_and_belongs_to_many :chromatographic_columns
+  has_many :chromatographic_columns
   accepts_nested_attributes_for :analytes, :reject_if => proc {|attributes| attributes[:name].blank?}, :allow_destroy => true
   
   validates_presence_of :name

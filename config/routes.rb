@@ -7,6 +7,8 @@ Chromalog::Application.routes.draw do
   end
   
     match 'run_logs/for_analytical_method_id/:id', :controller => 'run_logs', :action => 'for_analytical_method_id'
+    match 'run_logs/for_chromatographic_column_id/:id', :controller => 'run_logs', :action => 'for_chromatographic_column_id'
+
 
   resources :chromatographic_columns
 

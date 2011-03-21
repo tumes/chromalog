@@ -7,8 +7,6 @@
   %br/
   = label_tag(:column, "Column")
   = select_tag :column
-  / = label_tag(:column, "Column")
-  / = select_tag :column, options_for_select(@columns.collect{ |c| [c.name, c.id] })
   %br/
   = label_tag(:levels, "Levels")
   = text_field_tag(:levels, 3, :size => 1)

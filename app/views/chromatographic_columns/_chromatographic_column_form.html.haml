@@ -3,7 +3,8 @@
     = f.label :name
     %br/
     = f.text_field :name
-  = f.input :instrument_id, :collection => Instrument.all, :as => :select
+  = f.association :instrument
+  = f.input :analytical_method_id, :collection => [], :as => :select
   %p
     = f.label :brand
     %br/
