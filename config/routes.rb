@@ -5,6 +5,8 @@ Chromalog::Application.routes.draw do
       get 'intro'
     end
   end
+  
+    match 'run_logs/for_analytical_method_id/:id', :controller => 'run_logs', :action => 'for_analytical_method_id'
 
   resources :chromatographic_columns
 

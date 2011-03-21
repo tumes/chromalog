@@ -1,13 +1,22 @@
 = simple_form_for @chromatographic_column do |f|
-  = f.input :name
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
   = f.input :instrument_id, :collection => Instrument.all, :as => :select
-  %h2 Add dynamic method association select here!
-  = f.input :brand
+  %p
+    = f.label :brand
+    %br/
+    = f.text_field :brand
   %p
     = f.label :description
     %br/
     = f.text_area :description, :rows => 2, :cols => 40
-  = f.input :serial
+  %p
+    = f.label :serial
+    %br/
+    = f.text_field :serial
+    
   = f.input :received
   %p
     = f.label :notes

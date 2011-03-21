@@ -4,7 +4,5 @@ class CalibrationLevel < ActiveRecord::Base
   accepts_nested_attributes_for :area_counts
   
   attr_accessible :run_log_id, :area_counts_attributes
-  
-  #validates_presence_of :run_log_id
-  #validates_numericality_of :run_log_id
+
 end

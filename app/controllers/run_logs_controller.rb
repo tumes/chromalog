@@ -21,8 +21,11 @@ class RunLogsController < InheritedResources::Base
     create!{ root_path }
   end
   
-  def update_method_menu
-    @method = AnalyticalMethod.find(params[:search][:state])
-    render :layout => false
+  def for_analytical_method_id
+    @dynamic_methods = AnalyticalMethod.find(:all, :conditions => ["instrument_id = ?", params[:id]])
+    respond_to do |format|
+      format.json { render :json => @dynamic_methods }
+    end
   end
+  
 end

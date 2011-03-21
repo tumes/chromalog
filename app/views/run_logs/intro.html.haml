@@ -1,10 +1,16 @@
 - form_tag new_run_log_path, :method => 'get' do
   = label_tag(:instrument, "Instrument")
-  = select_tag 'instrument', options_for_select(@instruments.collect{ |i| [i.name, i.id] })
+  = select_tag :instrument, options_for_select(@instruments.collect{ |i| [i.name, i.id] }, :prompt => "Select one")
+  %br/
   = label_tag(:method, "Method")
-  = select_tag 'method', options_for_select(@methods.collect{ |m| [m.name, m.id] })
+  = select_tag :method
+  %br/
   = label_tag(:column, "Column")
-  = select_tag 'column', options_for_select(@columns.collect{ |c| [c.name, c.id] })
+  = select_tag :column
+  / = label_tag(:column, "Column")
+  / = select_tag :column, options_for_select(@columns.collect{ |c| [c.name, c.id] })
+  %br/
   = label_tag(:levels, "Levels")
-  = text_field_tag(:levels, 3, :size => 2)
+  = text_field_tag(:levels, 3, :size => 1)
+  %br/
   = submit_tag("Start run log")
