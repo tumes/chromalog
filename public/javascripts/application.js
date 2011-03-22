@@ -24,9 +24,9 @@ $(document).ready(function() {
     var id_value_string = $(this).val();
     if (id_value_string == "") { 
       // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
-      $("select#instrument option").remove();
+      $("select#method option").remove();
       var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-      $(row).appendTo("select#instrument");
+      $(row).appendTo("select#method");
     }
     else {
       // Send the request and update sub category dropdown 
@@ -42,7 +42,7 @@ $(document).ready(function() {
           // Clear all options from sub category select 
           $("select#method option").remove();
           //put in a empty default line
-          var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+          var row = "<option value=\"" + "" + "\">" + "Select one" + "</option>";
           $(row).appendTo("select#method");                        
           // Fill sub category select 
           $.each(data, function(i, j){
@@ -53,49 +53,14 @@ $(document).ready(function() {
       });
     };
   });
-                  
-  $("select#chromatographic_column_instrument_id").change(function(){
-    var id_value_string = $(this).val();
-    if (id_value_string == "") { 
-      // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
-      $("select#chromatographic_column_instrument_id option").remove();
-      var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-      $(row).appendTo("select#chromatographic_column_instrument_id");
-    }
-    else {
-      // Send the request and update sub category dropdown 
-      $.ajax({
-        dataType: "json",
-        cache: false,
-        url: '/run_logs/for_analytical_method_id/' + id_value_string,
-        timeout: 2000,
-        error: function(XMLHttpRequest, errorTextStatus, error){
-            alert("Failed to submit : "+ errorTextStatus+" ;"+error);
-        },
-        success: function(data){                    
-          // Clear all options from sub category select 
-          $("select#chromatographic_column_analytical_method_id option").remove();
-          //put in a empty default line
-          var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-          $(row).appendTo("select#chromatographic_analytical_method_column_id");                        
-          // Fill sub category select 
-          $.each(data, function(i, j){
-            row = "<option value=\"" + j.analytical_method.id + "\">" + j.analytical_method.name + "</option>";   
-            $(row).appendTo("select#chromatographic_column_analytical_method_id");                     
-          });             
-         }
-      });
-    };
-  });
-    
-    
+                
   $("select#method").change(function(){
     var id_value_string = $(this).val();
     if (id_value_string == "") { 
       // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
-      $("select#method option").remove();
+      $("select#column option").remove();
       var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-      $(row).appendTo("select#method");
+      $(row).appendTo("select#column");
     }
     else {
       // Send the request and update sub category dropdown 
@@ -111,7 +76,7 @@ $(document).ready(function() {
           // Clear all options from sub category select 
           $("select#column option").remove();
           //put in a empty default line
-          var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+          var row = "<option value=\"" + "" + "\">" + "Select one" + "</option>";
           $(row).appendTo("select#column");                        
           // Fill sub category select 
           $.each(data, function(i, j){

@@ -1,6 +1,6 @@
 - form_tag new_run_log_path, :method => 'get' do
   = label_tag(:instrument, "Instrument")
-  = select_tag :instrument, options_for_select(@instruments.collect{ |i| [i.name, i.id] }, :prompt => "Select one")
+  = select_tag :instrument, options_for_select([["Select one", ""]] + @instruments.collect{ |i| [i.name, i.id] })
   %br/
   = label_tag(:method, "Method")
   = select_tag :method
