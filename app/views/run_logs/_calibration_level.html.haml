@@ -13,3 +13,5 @@
         %a{ :id => "next", :href => "#" } Next
       - unless calibration_level == @levels.first
         %a{ :id => "back", :href => "#" } Back
+      - if calibration_level == @levels.last
+        = f.submit
