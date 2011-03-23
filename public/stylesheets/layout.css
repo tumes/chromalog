@@ -464,14 +464,20 @@ input[type="text"], input[type="password"] {
   padding: 0.2em;
   border-style: solid;
   border-color: black;
+  border-width: 2px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-box-shadow: 2px 2px #999;
   -webkit-box-shadow: 2px 2px #999;
 }
 
-.big-text{
-  font-size: 1em;
+bigtext{
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+div#polaroid-block label{
+  font-size: 1.4em;
   font-weight: bold;
 }
 
@@ -517,4 +523,23 @@ select {
   border-style: solid;
   border-color: black;
   border-width: 2px;
+}
+
+.indexitem {
+  width: 440px;
+  padding: 10px;
+  margin: 0;
+  display: block;
+}
+
+.indexitem h1 {
+	font-weight: bold;
+  letter-spacing: -0.09em;
+  margin: 0;
+  line-height: 0.7em;
+}
+#even {
+  background: #eee;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
 }

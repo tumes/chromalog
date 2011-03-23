@@ -7,4 +7,5 @@ class ApplicationController < ActionController::Base
     def populate_methods
       @methods = AnalyticalMethod.all
     end
+  
 end

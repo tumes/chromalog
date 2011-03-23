@@ -9,10 +9,8 @@
     %label
       Pressure and flow rate: 
     = f.text_field :pressure, :as => :string, :size => 3
-    @
+    %bigtext @
     = f.text_field :flow_rate, :as => :string, :size => 3
-    mL/min
+    %bigtext mL/min
   
   = render :partial => 'run_logs/calibration_level', :collection => @levels, :locals => { :f => f }
-  
-= @run_log.errors
