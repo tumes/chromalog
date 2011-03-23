@@ -6,7 +6,8 @@
   = f.hidden_field :chromatographic_column_id, :value => params[:column]
   = f.input :run_date
   %p 
-    Pressure and flow rate: 
+    %label
+      Pressure and flow rate: 
     = f.text_field :pressure, :as => :string, :size => 3
     @
     = f.text_field :flow_rate, :as => :string, :size => 3
@@ -14,3 +15,4 @@
   
   = render :partial => 'run_logs/calibration_level', :collection => @levels, :locals => { :f => f }
   
+= @run_log.errors
