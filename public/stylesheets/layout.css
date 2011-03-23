@@ -436,9 +436,21 @@ img.minus { margin-bottom: -3px;}
 
 #polaroid-block h2 {
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 	font-weight: bold;
   letter-spacing: -0.09em;
+}
+
+div#polaroid-block label {
+  float: left;
+  text-align: right;
+  margin-right: 3%;
+  width: 32%;
+  line-height: 2.4em;
+}
+
+div#polaroid-block input[type="text"] {
+  width: 62%;
 }
 
 /*Playing with multi-page forms*/
@@ -538,8 +550,10 @@ select {
   margin: 0;
   line-height: 0.7em;
 }
+
 #even {
   background: #eee;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
 }
+
