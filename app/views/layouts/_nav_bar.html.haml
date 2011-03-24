@@ -2,24 +2,35 @@
   %ul.nav.main
     - if anybody_signed_in?
       %li
-        %a{ :href => "#" } Log stuff
+        %a{ :href => "#" } Log
         %ul
           %li
-            %a{ :href => intro_run_logs_path } Log run
+            %a{ :href => intro_run_logs_path } Run
           %li
-            %a{ :href => new_maintenance_event_path } Log maintenance
+            %a{ :href => new_maintenance_event_path } Maintenance
       %li
-        %a{ :href => "#" } Add/edit stuff
+        %a{ :href => "#" } View
         %ul
+          %li
+            %a{ :href => run_logs_path } Run Logs
+          %li
+            %a{ :href => maintenance_events_path } Maintenances
           %li
             %a{ :href => chromatographic_columns_path } Columns
           %li
             %a{ :href => instruments_path } Instruments
       %li
-        %a{ :href => "#" } Reporter
+        %a{ :href => "#" } Add/edit
         %ul
           %li
-            %a{ :href => "#" } Column report
+            %a{ :href => new_chromatographic_column_path } Columns
+          %li
+            %a{ :href => new_instrument_path } Instruments
+      %li
+        %a{ :href => "#" } Reporterator
+        %ul
+          %li
+            %a{ :href => "#" } Coming soon!
       %li.secondary
         %a{ :href => destroy_user_session_path } Sign out
 .clear
