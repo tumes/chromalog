@@ -4,11 +4,9 @@
 = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   %p
     = f.label :email
-    %br/
     = f.text_field :email
   %p
     = f.label :password
-    %br/
     = f.password_field :password
-  %p= f.submit 'Sign in'
+  %p= f.submit 'Sign in', :disable_with => "Submitting..."
 

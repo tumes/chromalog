@@ -11,8 +11,9 @@
       = render :partial => 'layouts/nav_bar' 
       = render :partial => 'layouts/flash_bar' 
       .grid_6
+        .spacer
         = yield 
       .clear
-      .bottomspace
+      .spacer
       -if Rails.env.development?
         = debug(params) 

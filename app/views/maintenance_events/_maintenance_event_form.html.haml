@@ -11,4 +11,4 @@
   %p
     = f.label :result
     = f.text_area :result, :rows => 2, :cols => 40
-  = f.submit @maintenance_event.new_record? ? 'Log maintenance event' : 'Update maintenance event'
+  = f.submit @maintenance_event.new_record? ? 'Log maintenance event' : 'Update maintenance event', :disable_with => "Submitting..."

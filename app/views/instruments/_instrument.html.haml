@@ -1,3 +1,5 @@
 .indexitem{ :id => "#{"even" if instrument_counter.even?}"}
   %h1= instrument.name 
-  = link_to 'Edit', edit_instrument_path(instrument.id)
+  = pluralize(instrument.analytical_methods.count, 'Method')
+  %span{ :class => "editlink" }
+    = link_to 'Edit', edit_instrument_path(instrument.id)

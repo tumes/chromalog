@@ -18,4 +18,4 @@
   %p
     = f.label :notes
     = f.text_area :notes, :rows => 2, :cols => 40
-  = f.submit @chromatographic_column.new_record? ? 'Add column' : 'Edit column'
+  = f.submit @chromatographic_column.new_record? ? 'Add column' : 'Edit column', :disable_with => "Submitting..."

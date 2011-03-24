@@ -10,7 +10,7 @@
     %div{:id=>"new-methods"}
     .links
       =link_to_add_association 'Add method', f, :analytical_methods
-  = f.submit @instrument.new_record? ? 'Create instrument' : 'Update Instrument'
+  = f.submit @instrument.new_record? ? 'Create instrument' : 'Update Instrument', :disable_with => "Submitting..."
   
 
   
