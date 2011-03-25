@@ -1,3 +1,3 @@
 .indexitem{ :id => "#{"even" if run_log_counter.even?}"}
-  %h1= "Run log for #{Instrument.find(run_log.instrument_id).name} #{AnalyticalMethod.find(run_log.analytical_method_id).name}"
+  %h1= "Run log for #{run_log.find_instrument.name} #{run_log.find_method.name}"
   = "#{pluralize(run_log.calibration_levels.count, "level")}, #{pluralize(run_log.calibration_levels.first.area_counts.count, "analyte")}"

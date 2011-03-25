@@ -1,7 +1,7 @@
 .indexitem{ :id => "#{"even" if chromatographic_column_counter.even?}"}
   %h1= chromatographic_column.name
-  = "Used on #{Instrument.find(chromatographic_column.instrument_id).name}"
-  = " for #{time_ago_in_words(chromatographic_column.created_at)}"
+  = "Used on #{chromatographic_column.find_instrument.name}"
+  = " for #{time_ago_in_words(chromatographic_column.received)}"
   %span{ :class => "editlink" }
     = link_to 'Edit', edit_chromatographic_column_path(chromatographic_column.id)
   

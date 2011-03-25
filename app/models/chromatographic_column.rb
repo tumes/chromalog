@@ -7,4 +7,8 @@ class ChromatographicColumn < ActiveRecord::Base
                    :uniqueness => { :case_sensitive => false }
   validates_presence_of :instrument_id, :brand, :description, :serial, :received
   validates_numericality_of :instrument_id
+  
+  def find_instrument
+    Instrument.find(self.instrument_id)
+  end
 end

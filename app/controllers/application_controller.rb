@@ -8,4 +8,5 @@ class ApplicationController < ActionController::Base
       @methods = AnalyticalMethod.all
     end
   
+
 end
