@@ -1,0 +1,2 @@
+class AnalyticalStandardsController < ApplicationController
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110301204015) do
+ActiveRecord::Schema.define(:version => 20110404191717) do
 
   create_table "analytes", :force => true do |t|
     t.string   "name"
@@ -26,9 +26,19 @@ ActiveRecord::Schema.define(:version => 20110301204015) do
     t.datetime "updated_at"
   end
 
+  create_table "analytical_standards", :force => true do |t|
+    t.integer  "analytical_method_id"
+    t.integer  "user_id"
+    t.date     "preparation_date"
+    t.float    "volume"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "area_counts", :force => true do |t|
     t.integer  "calibration_level_id"
-    t.integer  "area"
+    t.float    "area"
     t.string   "analyte"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -36,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20110301204015) do
 
   create_table "calibration_levels", :force => true do |t|
     t.integer  "run_log_id"
-    t.integer  "standard_conc"
+    t.float    "standard_conc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -80,8 +90,8 @@ ActiveRecord::Schema.define(:version => 20110301204015) do
     t.integer  "analytical_method_id"
     t.integer  "chromatographic_column_id"
     t.date     "run_date"
-    t.integer  "pressure"
-    t.integer  "flow_rate"
+    t.float    "pressure"
+    t.float    "flow_rate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,5 +1,7 @@
 Chromalog::Application.routes.draw do
   
+  resources :analytical_standards
+
   resources :run_logs do
     collection do
       get 'intro'
