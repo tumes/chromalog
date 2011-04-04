@@ -3,6 +3,10 @@
     .polaroid-block
       %h2= "Snapshot for #{@instrument.name} #{@method.name}"
       - time_id = Time.now.to_f + calibration_level_counter
+      = label_tag "Std Conc"
+      = text_field_tag "run_log[calibration_levels_attributes][#{time_id}][standard_conc]"
+      %br/
+      %br/
       - @method.analytes.each do |analyte|
         - time_id2 = Time.now.to_f
         %label= analyte.name

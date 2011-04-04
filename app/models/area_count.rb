@@ -3,6 +3,6 @@ class AreaCount < ActiveRecord::Base
   
   attr_accessible :calibration_level_id, :area, :analyte
   
-  #validates_presence_of :calibration_level_id, :area
-  #validates_numericality_of :calibration_level_id, :area
+  validates_presence_of :calibration_level_id, :area
+  validates_numericality_of :calibration_level_id, :area
 end

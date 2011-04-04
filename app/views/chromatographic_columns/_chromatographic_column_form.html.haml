@@ -1,19 +1,12 @@
 = simple_form_for @chromatographic_column do |f|
-  %p
-    = f.label :name
-    = f.text_field :name
+  = f.input :name
   = f.association :instrument, :input_html => { :id => 'instrument' }, :prompt => "Select one"
   = f.input :analytical_method_id, :collection => [], :as => :select, :input_html => { :id => 'method' }
-  %p
-    = f.label :brand
-    = f.text_field :brand
+  = f.input :brand
   %p
     = f.label :description
     = f.text_area :description, :rows => 2, :cols => 40
-  %p
-    = f.label :serial
-    = f.text_field :serial
-    
+  = f.input :serial    
   = f.input :received
   %p
     = f.label :notes

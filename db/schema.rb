@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110301204015) do
 
   create_table "calibration_levels", :force => true do |t|
     t.integer  "run_log_id"
+    t.integer  "standard_conc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

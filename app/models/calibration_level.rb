@@ -5,4 +5,6 @@ class CalibrationLevel < ActiveRecord::Base
   
   attr_accessible :run_log_id, :area_counts_attributes
 
+  validates_presence_of :run_log_id, :standard_conc
+  validates_numericality_of :run_log_id, :standard_conc
 end
