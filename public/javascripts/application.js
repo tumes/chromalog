@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  var $curr = $("#level0");
+  var $curr = $("#level:first");
   var $next = $curr.next();
   
   $('a#next').click( function() {

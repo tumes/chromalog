@@ -1,4 +1,4 @@
-%div{ :id => "level#{calibration_level_counter}", :class => "#{"display-none" unless calibration_level_counter == 0}"}
+%div{ :id => "level", :class => "#{"display-none" unless calibration_level_counter == 0}"}
   .polaroid-border
     .polaroid-block
       %h2= "Snapshot for #{@instrument.name} #{@method.name}"
