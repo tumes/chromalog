@@ -1,0 +1,8 @@
+- form_tag new_analytical_standard_path, :method => 'get' do
+  = label_tag(:instrument, "Instrument")
+  = select_tag :instrument, options_for_select([["Select one", ""]] + instruments.collect{ |i| [i.name, i.id] })
+  %br/
+  = label_tag(:method, "Method")
+  = select_tag :method
+  %br/
+  = submit_tag "Start standard log", :disable_with => "Starting"

@@ -1,7 +1,5 @@
 Chromalog::Application.routes.draw do
   
-  resources :analytical_standards
-
   resources :run_logs do
     collection do
       get 'intro'
@@ -11,6 +9,11 @@ Chromalog::Application.routes.draw do
     match 'run_logs/for_analytical_method_id/:id', :controller => 'run_logs', :action => 'for_analytical_method_id'
     match 'run_logs/for_chromatographic_column_id/:id', :controller => 'run_logs', :action => 'for_chromatographic_column_id'
 
+  resources :analytical_standards do
+    collection do
+      get 'intro'
+    end
+  end
 
   resources :chromatographic_columns
 

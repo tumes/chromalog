@@ -1,9 +1,18 @@
 = simple_form_for @analytical_standard do |f|
-  = f.input :analytical_method_id, :collection => methods, :as => :select
-  = f.input :user_id, :label => "Preparer", :collection => users, :as => :select
+
+  = f.hidden_field :analytical_method_id, :value => params[:method]
+  = f.input :user_id, :label => "Prepared by", :collection => users, :as => :select
   = f.input :preparation_date, :label => "Preparation date"
   = f.input :volume, :as => :string
   %p
     = f.label :notes
     = f.text_area :notes, :rows => 2, :cols => 40
-  = f.submit @analytical_standard.new_record? ? 'Log Standard' : 'Update Standard', :disable_with => "Submitting..."
+    
+    .polaroid-border
+      .polaroid-block
+        %h2= "Standard for #{@method.name}"
+        - @method.analytes.each do |analyte|
+          %bigtext= analyte.name
+          %br/
+        .lowbuttons
+          = f.submit @analytical_standard.new_record? ? 'Log Standard' : 'Update Standard', :disable_with => "Submitting..."

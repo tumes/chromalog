@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110404191717) do
+ActiveRecord::Schema.define(:version => 20110405210850) do
 
   create_table "analytes", :force => true do |t|
     t.string   "name"
@@ -92,6 +92,15 @@ ActiveRecord::Schema.define(:version => 20110404191717) do
     t.date     "run_date"
     t.float    "pressure"
     t.float    "flow_rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "standard_amounts", :force => true do |t|
+    t.string   "name"
+    t.float    "amount"
+    t.integer  "analytical_method_id"
+    t.string   "batch"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
