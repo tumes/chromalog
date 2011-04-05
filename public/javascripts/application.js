@@ -2,6 +2,7 @@ $(document).ready(function() {
   
   var $curr = $("#level:first");
   var $next = $curr.next();
+  $curr.nextAll().addClass('display-none')
   
   $('a#next').click( function() {
     $curr.slideToggle();
