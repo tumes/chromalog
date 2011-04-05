@@ -1,9 +1,9 @@
 class RunLogsController < InheritedResources::Base
+  expose(:instruments) { Instrument.all }
+  expose(:methods) { AnalyticalMethod.all }
+  expose(:columns) { ChromatograhpicColumn.all }
 
   def intro
-    @instruments = Instrument.all
-    @methods = AnalyticalMethod.all  
-    @columns = ChromatographicColumn.all  
   end
   
   def new

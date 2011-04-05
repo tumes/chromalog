@@ -1,0 +1,9 @@
+= simple_form_for @analytical_standard do |f|
+  = f.input :analytical_method_id, :collection => methods, :as => :select
+  = f.input :user_id, :label => "Preparer", :collection => users, :as => :select
+  = f.input :preparation_date, :label => "Preparation date"
+  = f.input :volume, :as => :string
+  %p
+    = f.label :notes
+    = f.text_area :notes, :rows => 2, :cols => 40
+  = f.submit @analytical_standard.new_record? ? 'Log Standard' : 'Update Standard', :disable_with => "Submitting..."
