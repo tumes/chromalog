@@ -1,6 +1,6 @@
 = simple_form_for @maintenance_event do |f|
-  = f.input :instrument_id, :collection => Instrument.all, :as => :select
-  = f.input :user_id, :label => "Technician", :collection => User.all, :as => :select
+  = f.input :instrument_id, :collection => instruments, :as => :select
+  = f.input :user_id, :label => "Technician", :collection => users, :as => :select
   = f.input :date
   %p
     = f.label :problem
