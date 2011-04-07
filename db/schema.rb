@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(:version => 20110405210850) do
   create_table "standard_amounts", :force => true do |t|
     t.string   "name"
     t.float    "amount"
-    t.integer  "analytical_method_id"
+    t.integer  "analytical_standard_id"
     t.string   "batch"
     t.datetime "created_at"
     t.datetime "updated_at"

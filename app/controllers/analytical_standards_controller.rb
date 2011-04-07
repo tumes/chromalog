@@ -9,7 +9,9 @@ class AnalyticalStandardsController < InheritedResources::Base
   
   def new
     @method = AnalyticalMethod.find(params[:method])
+    @analytes = @method.analytes
     @analytical_standard = AnalyticalStandard.new
+    @method.analytes.count.times{ @analytical_standard.standard_amounts.build }
   end
   
   def create

@@ -259,8 +259,8 @@ col.colC {
 	width:8em;
 }
 th, td {
-	padding:.2em 1em;
-	text-align:left;
+	/*padding:.2em 1em;*/
+	text-align:center;
 }
 thead th {
 	border-bottom:2px solid #888;
@@ -497,6 +497,10 @@ select {
   border-style: solid;
   border-color: black;
   border-width: 2px;
+}
+
+th {
+  width: 33%;
 }
 
 /*A container that looks like a polaroid for information snapshots. The proportions are even right(ish)!*/

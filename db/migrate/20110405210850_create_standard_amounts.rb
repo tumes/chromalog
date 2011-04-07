@@ -3,7 +3,7 @@ class CreateStandardAmounts < ActiveRecord::Migration
     create_table :standard_amounts do |t|
       t.string :name
       t.float :amount
-      t.integer :analytical_method_id
+      t.integer :analytical_standard_id
       t.string :batch
 
       t.timestamps
