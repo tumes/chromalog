@@ -439,6 +439,7 @@ input[type="text"], input[type="password"] {
   border-style: solid;
   border-color: black;
   border-width: 2px;
+  width: 98%;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-box-shadow: 2px 2px #999;
