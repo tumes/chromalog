@@ -1,14 +1,14 @@
 - form_tag new_run_log_path, :method => 'get' do
-  = label_tag(:instrument, "Instrument")
-  = select_tag :instrument, options_for_select([["Select one", ""]] + instruments.collect{ |i| [i.name, i.id] })
-  %br/
-  = label_tag(:method, "Method")
-  = select_tag :method
-  %br/
-  = label_tag(:column, "Column")
-  = select_tag :column
-  %br/
-  = label_tag(:levels, "Levels")
-  = text_field_tag(:levels, 3, :size => 1)
-  %br/
+  %p
+    = label_tag(:instrument, "Instrument")
+    = select_tag :instrument, options_for_select([["Select one", ""]] + instruments.collect{ |i| [i.name, i.id] })
+  %p
+    = label_tag(:method, "Method")
+    = select_tag :method
+  %p
+    = label_tag(:column, "Column")
+    = select_tag :column
+  %p
+    = label_tag(:levels, "Levels")
+    = text_field_tag(:levels, 3, :size => 1)
   = submit_tag "Start run log", :disable_with => "Starting"

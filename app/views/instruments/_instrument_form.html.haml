@@ -1,8 +1,5 @@
 = simple_form_for @instrument do |f|
-  %p
-    = f.label :name
-    = f.text_field :name
-    = f.error :name
+  = f.input :name
   %p
     = f.simple_fields_for :analytical_methods do |analytical_method|
       = render 'analytical_method_fields', :f => analytical_method

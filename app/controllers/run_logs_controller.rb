@@ -11,6 +11,8 @@ class RunLogsController < InheritedResources::Base
     @method = AnalyticalMethod.find(params[:method])
     @column = ChromatographicColumn.find(params[:column])
     @run_log = RunLog.new
+    # params[:levels].to_i.times{ @run_log.calibration_levels.build }
+    # (@method.analytes.count * params[:levels].to_i).times{ @run_log.area_counts.build }
     @levels = []
     for i in 1..(params[:levels].to_i)
       @levels.push(i)

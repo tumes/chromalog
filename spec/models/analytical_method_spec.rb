@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe AnalyticalMethod do
   it { should validate_presence_of(:name) }
+  it { should allow_mass_assignment_of(:name) }
   it { should belong_to(:instrument) }
   it { should have_many(:analytes) }
   it { should have_many(:analytical_standards) }

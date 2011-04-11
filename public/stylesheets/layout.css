@@ -406,7 +406,10 @@ input.search.button {
 
 /*Form styling*/
 
-span.error { color: red;}
+span.error { 
+  color: red;
+  display: block;
+}
 
 .hint { font-style: italic; }
 

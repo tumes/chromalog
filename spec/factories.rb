@@ -22,6 +22,7 @@ end
 Factory.define :chromatographic_column do |column|
   column.name "Test column"
   column.instrument_id "1"
+  column.analytical_method_id "1"
   column.brand "Testco"
   column.description "Testing column"
   column.serial "100"

@@ -1,0 +1,308 @@
+
+--- 
+analytes: 
+  columns: 
+  - id
+  - name
+  - analytical_method_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Ethanol
+    - 1
+    - 2011-04-11 15:35:10.971029
+    - 2011-04-11 15:35:10.971029
+  - - 2
+    - Methanol
+    - 1
+    - 2011-04-11 15:35:10.980016
+    - 2011-04-11 15:35:10.980016
+  - - 3
+    - Acetic
+    - 2
+    - 2011-04-11 15:35:10.981527
+    - 2011-04-11 15:35:10.981527
+  - - 4
+    - Glucose
+    - 3
+    - 2011-04-11 15:35:48.801386
+    - 2011-04-11 15:35:48.801386
+  - - 5
+    - Xylose
+    - 3
+    - 2011-04-11 15:35:48.810039
+    - 2011-04-11 15:35:48.810039
+  - - 6
+    - Fructose
+    - 3
+    - 2011-04-11 15:35:48.810754
+    - 2011-04-11 15:35:48.810754
+
+--- 
+analytical_methods: 
+  columns: 
+  - id
+  - name
+  - instrument_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - EtOH + MeOH
+    - 1
+    - 2011-04-11 15:35:10.963958
+    - 2011-04-11 15:35:10.963958
+  - - 2
+    - VFAs
+    - 1
+    - 2011-04-11 15:35:10.980902
+    - 2011-04-11 15:35:10.980902
+  - - 3
+    - Fructose
+    - 2
+    - 2011-04-11 15:35:48.793903
+    - 2011-04-11 15:35:48.793903
+
+--- 
+analytical_standards: 
+  columns: 
+  - id
+  - analytical_method_id
+  - user_id
+  - preparation_date
+  - volume
+  - notes
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 1
+    - 1
+    - "2011-04-11"
+    - 100.0
+    - ""
+    - 2011-04-11 15:39:50.350556
+    - 2011-04-11 15:39:50.350556
+
+--- 
+area_counts: 
+  columns: 
+  - id
+  - calibration_level_id
+  - area
+  - analyte
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 1
+    - 1.0
+    - Ethanol
+    - 2011-04-11 15:39:12.170473
+    - 2011-04-11 15:39:12.170473
+  - - 2
+    - 1
+    - 1.0
+    - Methanol
+    - 2011-04-11 15:39:12.180398
+    - 2011-04-11 15:39:12.180398
+  - - 3
+    - 2
+    - 2.0
+    - Ethanol
+    - 2011-04-11 15:39:12.181934
+    - 2011-04-11 15:39:12.181934
+  - - 4
+    - 2
+    - 2.0
+    - Methanol
+    - 2011-04-11 15:39:12.182651
+    - 2011-04-11 15:39:12.182651
+
+--- 
+calibration_levels: 
+  columns: 
+  - id
+  - run_log_id
+  - standard_conc
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 1
+    - 6.0
+    - 2011-04-11 15:39:12.123588
+    - 2011-04-11 15:39:12.123588
+  - - 2
+    - 1
+    - 12.0
+    - 2011-04-11 15:39:12.181313
+    - 2011-04-11 15:39:12.181313
+
+--- 
+chromatographic_columns: 
+  columns: 
+  - id
+  - name
+  - instrument_id
+  - analytical_method_id
+  - brand
+  - description
+  - serial
+  - received
+  - notes
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - GC1-1
+    - 1
+    - 1
+    - Supelco
+    - Carbopack B glass column
+    - 111-111-111
+    - "2011-04-11"
+    - ""
+    - 2011-04-11 15:36:21.740118
+    - 2011-04-11 15:36:21.740118
+  - - 2
+    - GC2-1
+    - 1
+    - 2
+    - Restek
+    - Restek is awesome.
+    - 222-222-222
+    - "2011-04-11"
+    - ""
+    - 2011-04-11 15:36:51.806923
+    - 2011-04-11 15:36:51.806923
+  - - 3
+    - OA1
+    - 2
+    - 3
+    - Shodex
+    - New sugar column.
+    - 333-333-333
+    - "2011-04-11"
+    - ""
+    - 2011-04-11 15:37:56.995233
+    - 2011-04-11 15:37:56.995233
+
+--- 
+instruments: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - GC2014
+    - 2011-04-11 15:35:10.960913
+    - 2011-04-11 15:35:10.960913
+  - - 2
+    - HPLC1
+    - 2011-04-11 15:35:48.790555
+    - 2011-04-11 15:35:48.790555
+
+--- 
+maintenance_events: 
+  columns: 
+  - id
+  - instrument_id
+  - date
+  - problem
+  - maintenance_performed
+  - user_id
+  - result
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 1
+    - "2011-04-11"
+    - Instrument on fire.
+    - Applied bucket of water to instrument.
+    - 1
+    - Instrument wet, no longer on fire.
+    - 2011-04-11 15:38:41.004462
+    - 2011-04-11 15:38:41.004462
+
+--- 
+run_logs: 
+  columns: 
+  - id
+  - instrument_id
+  - analytical_method_id
+  - chromatographic_column_id
+  - run_date
+  - pressure
+  - flow_rate
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 1
+    - 1
+    - 1
+    - "2011-04-11"
+    - 5.0
+    - 10.0
+    - 2011-04-11 15:39:12.112638
+    - 2011-04-11 15:39:12.112638
+
+--- 
+standard_amounts: 
+  columns: 
+  - id
+  - name
+  - amount
+  - analytical_standard_id
+  - batch
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Ethanol
+    - 5.0
+    - 1
+    - abc
+    - 2011-04-11 15:39:50.360181
+    - 2011-04-11 15:39:50.360181
+  - - 2
+    - Methanol
+    - 5.0
+    - 1
+    - def
+    - 2011-04-11 15:39:50.370533
+    - 2011-04-11 15:39:50.370533
+
+--- 
+users: 
+  columns: 
+  - id
+  - email
+  - encrypted_password
+  - password_salt
+  - name
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - tumes@msn.com
+    - $2a$10$gyGne20VXMoLL1.CsURqLO9Io/IcUib226DFwI4E3PkLy.JBqVAyy
+    - $2a$10$gyGne20VXMoLL1.CsURqLO
+    - Robert Brandin
+    - 1
+    - 2011-04-11 15:34:25.469908
+    - 2011-04-11 15:34:25.469908
+    - 127.0.0.1
+    - 127.0.0.1
+    - 2011-04-11 15:34:25.462430
+    - 2011-04-11 15:34:25.470188

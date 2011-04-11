@@ -5,11 +5,20 @@ describe ChromatographicColumn do
   
   it { should belong_to(:instrument) }
   
+  it { should belong_to(:analytical_method) }
+  
   it { should validate_presence_of(:name) }
   it { should allow_mass_assignment_of(:name) }
+  it { should validate_uniqueness_of(:name) }
+  it { should have_db_index(:name) }
   
   it { should validate_presence_of(:instrument_id) }
+  it { should allow_mass_assignment_of(:instrument_id) }
   it { should validate_numericality_of(:instrument_id) }
+  
+  it { should validate_presence_of(:analytical_method_id) }
+  it { should allow_mass_assignment_of(:analytical_method_id) }
+  it { should validate_numericality_of(:analytical_method_id) }  
   
   it { should validate_presence_of(:brand) }
   it { should allow_mass_assignment_of(:brand) }
@@ -24,6 +33,12 @@ describe ChromatographicColumn do
   it { should allow_mass_assignment_of(:received) }
   
   it { should allow_mass_assignment_of(:notes) }
-  
-  it { should validate_uniqueness_of(:name) }
+
+  it "should find a column's parent instrument with find_instrument" do
+    @instrument = Factory(:instrument)
+    @column = Factory(:chromatographic_column)
+    @column.find_instrument.should == @instrument
+  end
+    
+
 end

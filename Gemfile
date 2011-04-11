@@ -15,6 +15,7 @@ group :development do
   gem 'hpricot'
   gem 'rspec-rails'
   gem 'ruby_parser'
+  gem 'yaml_db'
 end
 
 group :test do

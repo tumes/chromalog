@@ -4,6 +4,7 @@ describe Instrument do
   
   it { should validate_presence_of(:name) }
   it { should validate_uniqueness_of(:name) }
+  it { should have_db_index(:name) }
   it { should validate_presence_of(:analytical_methods).with_message(/include at least one method/) }  
   it { should have_many(:analytical_methods) }
   it { should have_many(:analytes).through(:analytical_methods) }
