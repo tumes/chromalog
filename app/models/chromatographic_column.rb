@@ -11,4 +11,8 @@ class ChromatographicColumn < ActiveRecord::Base
   def find_instrument
     Instrument.find(self.instrument_id)
   end
+  
+  def find_method
+    AnalyticalMethod.find(self.analytical_method_id)
+  end
 end

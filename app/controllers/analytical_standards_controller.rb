@@ -12,6 +12,11 @@ class AnalyticalStandardsController < InheritedResources::Base
     @analytes = @method.analytes
     @analytical_standard = AnalyticalStandard.new
     @method.analytes.count.times{ @analytical_standard.standard_amounts.build }
+    
+    respond_to do |format|
+      format.js { render :partial => "analytical_standard_form"}
+      format.html
+    end
   end
   
   def create

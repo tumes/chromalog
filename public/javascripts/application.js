@@ -1,5 +1,15 @@
 $(document).ready(function() {
   
+  $(".standard_intro form").submit(function(){
+    var queryString = $(this).serialize();
+    var url = $(this).attr("action");
+    $.get(url+"?"+queryString, function(data) {
+      $(".standard_form").html(data).slideDown();
+    });
+    $(".standard_intro").slideUp();
+    return false;
+  });
+  
   var $curr = $("#level:first");
   var $next = $curr.next();
   $curr.nextAll().addClass('display-none')

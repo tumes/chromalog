@@ -39,6 +39,11 @@ describe ChromatographicColumn do
     @column = Factory(:chromatographic_column)
     @column.find_instrument.should == @instrument
   end
-    
+  
+  it "should find a column's parent method with find_method" do
+    @method = Factory(:analytical_method)
+    @column = Factory(:chromatographic_column)
+    @column.find_method.should == @method
+  end  
 
 end
