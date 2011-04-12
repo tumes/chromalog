@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20110405210850) do
     t.integer  "analytical_method_id"
     t.integer  "user_id"
     t.date     "preparation_date"
-    t.float    "volume"
+    t.decimal  "volume",               :precision => 12, :scale => 4
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20110405210850) do
 
   create_table "area_counts", :force => true do |t|
     t.integer  "calibration_level_id"
-    t.float    "area"
+    t.decimal  "area",                 :precision => 12, :scale => 4
     t.string   "analyte"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20110405210850) do
 
   create_table "calibration_levels", :force => true do |t|
     t.integer  "run_log_id"
-    t.float    "standard_conc"
+    t.decimal  "standard_conc", :precision => 12, :scale => 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,15 +90,15 @@ ActiveRecord::Schema.define(:version => 20110405210850) do
     t.integer  "analytical_method_id"
     t.integer  "chromatographic_column_id"
     t.date     "run_date"
-    t.float    "pressure"
-    t.float    "flow_rate"
+    t.decimal  "pressure",                  :precision => 12, :scale => 4
+    t.decimal  "flow_rate",                 :precision => 12, :scale => 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "standard_amounts", :force => true do |t|
     t.string   "name"
-    t.float    "amount"
+    t.decimal  "amount",                 :precision => 12, :scale => 4
     t.integer  "analytical_standard_id"
     t.string   "batch"
     t.datetime "created_at"

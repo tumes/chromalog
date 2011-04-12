@@ -5,8 +5,8 @@ class CreateRunLogs < ActiveRecord::Migration
       t.integer :analytical_method_id
       t.integer :chromatographic_column_id
       t.date :run_date
-      t.float :pressure
-      t.float :flow_rate
+      t.decimal :pressure, :precision => 12, :scale => 4
+      t.decimal :flow_rate, :precision => 12, :scale => 4
 
       t.timestamps
     end

@@ -2,7 +2,7 @@
 %html
   %head
     %meta{ :name => 'viewport', :content => 'width=500'} 
-    %title Chromalog | #{ yield(:title) }
+    %title= content_for?(:title) ? "Chromalog | #{content_for(:title)}" : "Chromalog"
     = render :partial => 'layouts/stylesheets'
     = render :partial => 'layouts/javascript'
   %body

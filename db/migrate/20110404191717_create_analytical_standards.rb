@@ -4,7 +4,7 @@ class CreateAnalyticalStandards < ActiveRecord::Migration
       t.integer :analytical_method_id
       t.integer :user_id
       t.date :preparation_date
-      t.float :volume
+      t.decimal :volume, :precision => 12, :scale => 4
       t.text :notes
 
       t.timestamps
