@@ -17,6 +17,11 @@ class RunLogsController < InheritedResources::Base
     for i in 1..(params[:levels].to_i)
       @levels.push(i)
     end
+    
+    respond_to do |format|
+      format.js { render :partial => "run_log_form"}
+      format.html
+    end
   end
   
   def create

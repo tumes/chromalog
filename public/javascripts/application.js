@@ -1,12 +1,24 @@
 $(document).ready(function() {
   
+  $(".run_log_intro form").submit(function(){
+    var queryString = $(this).serialize();
+    var url = $(this).attr("action");
+    $.get(url+"?"+queryString, function(data) {
+      $(".run_log_intro").slideUp('fast', function() {
+        $(".run_log_form").html(data).slideDown('slow');
+      });
+    });
+    return false;
+  });
+  
   $(".standard_intro form").submit(function(){
     var queryString = $(this).serialize();
     var url = $(this).attr("action");
     $.get(url+"?"+queryString, function(data) {
-      $(".standard_form").html(data).slideDown();
+      $(".standard_intro").slideUp('fast', function() {
+        $(".standard_form").html(data).slideDown('slow');
+      });
     });
-    $(".standard_intro").slideUp();
     return false;
   });
   
