@@ -8,11 +8,4 @@ class ChromatographicColumn < ActiveRecord::Base
   validates_presence_of :instrument_id, :analytical_method_id, :brand, :description, :serial, :received
   validates_numericality_of :instrument_id, :analytical_method_id
   
-  def find_instrument
-    Instrument.find(self.instrument_id)
-  end
-  
-  def find_method
-    AnalyticalMethod.find(self.analytical_method_id)
-  end
 end

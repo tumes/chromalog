@@ -1,3 +1,3 @@
 .indexitem{ :id => "#{"even" if maintenance_event_counter.even?}"}
-  %h1= "Maintenance on #{Instrument.find(maintenance_event.instrument_id).name}"
+  %h1= "Maintenance on #{maintenance_event.instrument.name}"
   = maintenance_event.created_at.strftime("Performed on %b %d, %Y")

@@ -34,16 +34,5 @@ describe ChromatographicColumn do
   
   it { should allow_mass_assignment_of(:notes) }
 
-  it "should find a column's parent instrument with find_instrument" do
-    @instrument = Factory(:instrument)
-    @column = Factory(:chromatographic_column)
-    @column.find_instrument.should == @instrument
-  end
-  
-  it "should find a column's parent method with find_method" do
-    @method = Factory(:analytical_method)
-    @column = Factory(:chromatographic_column)
-    @column.find_method.should == @method
-  end  
 
 end

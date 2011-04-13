@@ -1,47 +1,58 @@
 $(document).ready(function() {
   
-  $(".run_log_intro form").submit(function(){
+  $(".ajaxy_intro form").live("submit", function(){
     var queryString = $(this).serialize();
     var url = $(this).attr("action");
     $.get(url+"?"+queryString, function(data) {
-      $(".run_log_intro").slideUp('fast', function() {
-        $(".run_log_form").html(data).slideDown('slow');
+      $(".ajaxy_intro").slideUp('fast', function() {
+        $(".ajaxy_form").html(data);
+        
+        var $curr = $("#level:first");
+        var $next = $curr.next();
+        $curr.nextAll().addClass('display-none')
+
+        $('a#next').click( function() {
+          $curr.slideToggle();
+          $next.slideToggle();
+          $curr = $curr.next();
+          $next = $curr.next();
+          $prev = $curr.prev();
+        });
+
+        $('a#back').click( function() {
+          var $back = $curr.prev();
+          $curr.slideToggle();
+          $back.slideToggle();
+          $curr = $curr.prev();
+          $next = $curr.next();
+          $back = $curr.prev();
+        });
+        $(".ajaxy_form").slideDown();
       });
     });
     return false;
   });
   
-  $(".standard_intro form").submit(function(){
-    var queryString = $(this).serialize();
-    var url = $(this).attr("action");
-    $.get(url+"?"+queryString, function(data) {
-      $(".standard_intro").slideUp('fast', function() {
-        $(".standard_form").html(data).slideDown('slow');
-      });
-    });
-    return false;
-  });
-  
-  var $curr = $("#level:first");
-  var $next = $curr.next();
-  $curr.nextAll().addClass('display-none')
-  
-  $('a#next').click( function() {
-    $curr.slideToggle();
-    $next.slideToggle();
-    $curr = $curr.next();
-    $next = $curr.next();
-    $prev = $curr.prev();
-  });
-    
-  $('a#back').click( function() {
-    var $back = $curr.prev();
-    $curr.slideToggle();
-    $back.slideToggle();
-    $curr = $curr.prev();
-    $next = $curr.next();
-    $back = $curr.prev();
-  });
+  // var $curr = $("#level:first");
+  // var $next = $curr.next();
+  // $curr.nextAll().addClass('display-none')
+  // 
+  // $('a#next').click( function() {
+  //   $curr.slideToggle();
+  //   $next.slideToggle();
+  //   $curr = $curr.next();
+  //   $next = $curr.next();
+  //   $prev = $curr.prev();
+  // });
+  //   
+  // $('a#back').click( function() {
+  //   var $back = $curr.prev();
+  //   $curr.slideToggle();
+  //   $back.slideToggle();
+  //   $curr = $curr.prev();
+  //   $next = $curr.next();
+  //   $back = $curr.prev();
+  // });
   
   $("select#instrument").change(function(){
     var id_value_string = $(this).val();
