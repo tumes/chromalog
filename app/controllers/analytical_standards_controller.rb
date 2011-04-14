@@ -1,4 +1,5 @@
 class AnalyticalStandardsController < InheritedResources::Base
+  before_filter :authenticate_user!
   expose(:instruments) { Instrument.all }
   expose(:methods) { AnalyticalMethod.all }
   expose(:users) { User.all }

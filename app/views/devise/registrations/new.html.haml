@@ -22,5 +22,11 @@
       = f.password_field :password_confirmation
       = f.error :password_confirmation
     = f.input :security_code
-    = f.input :terms_of_service
+    %p
+      = f.label :terms_of_service
+      By checking this box you agree that...
+      %br/
+      I agree
+      = f.check_box :terms_of_service
+      = f.error :terms_of_service
     = f.submit 'Sign up', :disable_with => "Submitting..."
