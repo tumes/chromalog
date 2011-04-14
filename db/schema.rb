@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20110405210850) do
     t.string   "encrypted_password", :limit => 128, :default => "", :null => false
     t.string   "password_salt",                     :default => "", :null => false
     t.string   "name"
+    t.boolean  "terms_of_service"
     t.integer  "sign_in_count",                     :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"

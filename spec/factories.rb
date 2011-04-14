@@ -3,6 +3,8 @@ Factory.define :user do |user|
   user.email "user@test.com"
   user.password "testpass"
   user.password_confirmation "testpass"
+  user.security_code "1234"
+  user.terms_of_service "true"
 end
 
 Factory.define :analyte do |analyte|

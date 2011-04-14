@@ -1,12 +1,13 @@
 - title "Sign in"
 
-%h1 Sign in
-= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %p
-    = f.label :email
-    = f.text_field :email
-  %p
-    = f.label :password
-    = f.password_field :password
-  %p= f.submit 'Sign in', :disable_with => "Submitting..."
+.grid_6
+  %h1 Sign in
+  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    %p
+      = f.label :email
+      = f.text_field :email
+    %p
+      = f.label :password
+      = f.password_field :password
+    %p= f.submit 'Sign in', :disable_with => "Submitting..."
 

@@ -3,6 +3,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     create_table(:users) do |t|
       t.database_authenticatable :null => false
       t.string :name
+      t.boolean :terms_of_service
       t.trackable
 
       t.timestamps

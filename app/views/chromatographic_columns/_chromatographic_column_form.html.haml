@@ -8,11 +8,11 @@
       %label
         Instrument:
         %br/
-        = @chromatographic_column.find_instrument.name
+        = @chromatographic_column.instrument.name
         %br/
         Analytical Method:
         %br/
-        = @chromatographic_column.find_method.name
+        = @chromatographic_column.analytical_method.name
   = f.input :brand
   = f.input :description, :input_html => { :rows => 2, :cols => 40 }
   = f.input :serial    

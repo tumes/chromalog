@@ -27,6 +27,12 @@ hr
 	height: 0;
 }
 
+.show_items p {
+  font-size: 1.5em;
+  margin-bottom: 0em;
+  line-height:1.4em;
+}
+
 /* =Headings
 --------------------------------------------------------------------------------*/
 

@@ -11,7 +11,6 @@ body {
 	padding: 0 0 40px;
 }
 
-
 /* anchors
 ----------------------------------------------- */
 a {
@@ -38,6 +37,14 @@ h2 {margin-top:1em;}
 h5 {font-size:1.2em;}
 h6 {font-size:1em; text-transform:uppercase;}
 
+#show_title {
+  font-size: 3em;
+  line-height: 1em;
+}
+
+.inline {
+  display:inline;
+}
 
 h1 a {
 	font-weight:normal;
@@ -591,4 +598,20 @@ div.nested-fields label{
 
 .editlink {
   float: right;
+}
+
+/*Printable Section*/
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #section_to_print, #section_to_print * {
+    visibility: visible;
+  }
+  #section_to_print {
+    position: absolute;
+    left: 0;
+    top:0;
+  }
 }

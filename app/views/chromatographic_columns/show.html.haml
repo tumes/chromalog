@@ -1,0 +1,19 @@
+.grid_6
+  %h1{ :class => 'inline', :id => 'show_title' }= @chromatographic_column.name
+.clear
+.show_items
+  .grid_3
+    %p= "Instrument #{@chromatographic_column.instrument.name}"
+  .grid_3
+    %p= "Method #{@chromatographic_column.analytical_method.name}"
+  .clear
+  .grid_3
+    %p= "Serial #{@chromatographic_column.serial}"
+  .grid_3
+    %p= "Rec'd #{@chromatographic_column.received}"
+  .clear
+  .grid_6
+    %p= "Description: #{@chromatographic_column.description}"
+  .clear
+  .grid_6
+    %p= "Notes: #{@chromatographic_column.notes}" unless @chromatographic_column.notes.blank?
