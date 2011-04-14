@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :trackable, :validatable
 
-  attr_accessible :email, :name, :password, :password_confirmation, :terms_of_service
+  attr_accessible :email, :name, :password, :password_confirmation, :terms_of_service, :security_code
   attr_accessor :security_code
   
   validates_acceptance_of :terms_of_service, :accept => true
@@ -9,12 +9,9 @@ class User < ActiveRecord::Base
   
   protected
   
+    # Security code constant lives in environment.rb
     def correct_security_code
-      errors.add(:security_code, "Security code not valid") if security_code != "1234"
+      errors.add(:security_code, "Security code not valid") if security_code != SECURITY_CODE
     end
-  
-    # validates_each :security_code, :on => :create do |record, attr, value|
-    #   record.errors.add attr, "Please enter correct security code" unless value && value == "1234"
-    # end
     
 end
