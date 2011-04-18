@@ -10,7 +10,16 @@ Feature: Manage users
     And I fill in "Password" with "1234"
     And I fill in "Password confirmation" with "1234"
     And I fill in "Security code" with "1234"
-    And I check "Terms of service"
+    And I choose "Yes"
     And I press "Sign up"
+    Then I should be on the homepage
+    
+  Scenario: Signing in
+    Given I am a signed out, registered user
+    And I am on the homepage
+    When I follow "Sign in"
+    And I fill in "Email" with "user@test.com"
+    And I fill in "Password" with "testpass"
+    And I press "Sign in"
     Then I should be on the homepage
 

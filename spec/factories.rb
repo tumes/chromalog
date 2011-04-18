@@ -12,7 +12,7 @@ Factory.define :analyte do |analyte|
 end
 
 Factory.define :analytical_method do |analytical_method|
-  analytical_method.name "Method"
+  analytical_method.name "Test method"
   analytical_method.analytes [Factory(:analyte)]
 end
 
