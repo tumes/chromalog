@@ -1,0 +1,5 @@
+%tr
+  %td= analyte.name
+  = hidden_field_tag "analytical_standard[standard_amounts_attributes][#{analyte_counter}][name]", analyte.name
+  %td= text_field_tag "analytical_standard[standard_amounts_attributes][#{analyte_counter}][amount]"
+  %td= text_field_tag "analytical_standard[standard_amounts_attributes][#{analyte_counter}][batch]"

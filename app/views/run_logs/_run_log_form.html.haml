@@ -11,21 +11,6 @@
     = f.text_field :flow_rate, :as => :string, :size => 3
     %bigtext mL/min
   
-    - @levels.each_with_index do |level, i_1|
-      %div{ :id => "level" }
-        .polaroid-border
-          .polaroid-block
-            %h2= "Snapshot for #{@instrument.name} #{@method.name}"
-            = label_tag "Std Conc"
-            = text_field_tag "run_log[calibration_levels_attributes][#{i_1}][standard_conc]"
-            - @method.analytes.each_with_index do |analyte, i_2|
-              %label= analyte.name
-              = hidden_field_tag "run_log[calibration_levels_attributes][#{i_1}][area_counts_attributes][#{i_2}][analyte]", analyte.name
-              = text_field_tag "run_log[calibration_levels_attributes][#{i_1}][area_counts_attributes][#{i_2}][area]"
-            .lowbuttons
-              - unless i_1 + 1 == @levels.first
-                %a{ :id => "back", :href => "#" } <
-              - unless i_1 + 1 == @levels.last  
-                %a{ :id => "next", :href => "#" } >
-              - if i_1 + 1 == @levels.last
-                = f.submit :disable_with => "Submitting..."
+    = render :partial => 'run_log_level', :collection => @levels, :as => :level, :locals => { :f => f }
+
+
