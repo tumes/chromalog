@@ -1,6 +1,6 @@
 = simple_form_for @analytical_standard do |f|
 
-  = f.hidden_field :analytical_method_id, :value => params[:method]
+  = f.hidden_field :analytical_method_id, :value => params[:analytical_method]
   = f.input :user_id, :label => "Prepared by", :collection => users, :as => :select
   = f.input :preparation_date, :label => "Preparation date"
   = f.input :volume, :as => :string

@@ -1,7 +1,7 @@
 = simple_form_for @run_log do |f|
   = f.hidden_field :instrument_id, :value => params[:instrument]
-  = f.hidden_field :analytical_method_id, :value => params[:method]
-  = f.hidden_field :chromatographic_column_id, :value => params[:column]
+  = f.hidden_field :analytical_method_id, :value => params[:analytical_method]
+  = f.hidden_field :chromatographic_column_id, :value => params[:chromatographic_column]
   = f.input :run_date
   %p 
     %label

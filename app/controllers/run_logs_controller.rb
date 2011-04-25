@@ -9,8 +9,8 @@ class RunLogsController < InheritedResources::Base
   
   def new
     @instrument = Instrument.find(params[:instrument])
-    @method = AnalyticalMethod.find(params[:method])
-    @column = ChromatographicColumn.find(params[:column])
+    @method = AnalyticalMethod.find(params[:analytical_method])
+    @column = ChromatographicColumn.find(params[:chromatographic_column])
     @run_log = RunLog.new
     @levels = []
     for i in 1..(params[:levels].to_i)

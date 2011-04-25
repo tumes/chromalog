@@ -43,6 +43,9 @@ Given /^the database is seeded with a test instrument, method, and column$/ do
   Factory(:chromatographic_column)
 end
 
+Given /^I visit the standard logs page$/ do
+  visit('/analytical_standards/intro')
+end
 
 
 
