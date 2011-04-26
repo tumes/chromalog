@@ -49,7 +49,7 @@ $(document).ready(function() {
       $.ajax({
         dataType: "json",
         cache: false,
-        url: '/run_logs/for_' + next_select_id + '_id/' + id_value_string,
+        url: '/' + next_select_id + 's/' + id_value_string,
         timeout: 2000,
         error: function(XMLHttpRequest, errorTextStatus, error){
             alert("Failed to submit : "+ errorTextStatus+" ;"+error);

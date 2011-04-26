@@ -27,18 +27,4 @@ class RunLogsController < InheritedResources::Base
     create!(:notice => 'New run logged.'){ run_logs_path }
   end
   
-  def for_analytical_method_id
-    @dynamic_methods = AnalyticalMethod.find(:all, :conditions => ["instrument_id = ?", params[:id]])
-    respond_to do |format|
-      format.json { render :json => @dynamic_methods }
-    end
-  end
-  
-  def for_chromatographic_column_id
-    @dynamic_columns = ChromatographicColumn.find(:all, :conditions => ["analytical_method_id = ?", params[:id]])
-    respond_to do |format|
-      format.json { render :json => @dynamic_columns }
-    end
-  end
-  
 end
