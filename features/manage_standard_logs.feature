@@ -9,5 +9,4 @@ Feature: Manage users
     And the database is seeded with a test instrument, method, and column
     And I visit the standard logs page
     And I select "Test instrument" from "Instrument"
-    Then show me the page
     And I select "Test method" from "Method"

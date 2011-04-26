@@ -24,7 +24,7 @@ class RunLogsController < InheritedResources::Base
   end
   
   def create
-    create!{ root_path }
+    create!(:notice => 'New run logged.'){ run_logs_path }
   end
   
   def for_analytical_method_id

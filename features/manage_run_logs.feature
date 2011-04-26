@@ -15,7 +15,7 @@ Feature: Manage users
     And I press "Start run log"
     And I fill in "run_log_pressure" with "3"
     And I fill in "run_log_flow_rate" with "3"
-    And I fill in "Std conc" with "3"
+    And I fill in "Std_Conc" with "3"
     And I fill it "Analyte" with "3"
     And I press "Create Run log"
     Then I should be on the homepage

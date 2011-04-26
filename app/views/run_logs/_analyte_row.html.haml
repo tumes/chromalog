@@ -1,3 +1,4 @@
-%label= analyte.name
-= hidden_field_tag "run_log[calibration_levels_attributes][#{level_counter}][area_counts_attributes][#{analyte_counter}][analyte]", analyte.name
-= text_field_tag "run_log[calibration_levels_attributes][#{level_counter}][area_counts_attributes][#{analyte_counter}][area]"
+%tr
+  %td= analyte.name
+  = hidden_field_tag "run_log[calibration_levels_attributes][#{level_counter}][area_counts_attributes][#{analyte_counter}][analyte]", analyte.name
+  %td= text_field_tag "run_log[calibration_levels_attributes][#{level_counter}][area_counts_attributes][#{analyte_counter}][area]"
