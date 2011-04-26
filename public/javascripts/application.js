@@ -49,6 +49,7 @@ $(document).ready(function() {
       $.ajax({
         dataType: "json",
         cache: false,
+        // This queries the controller directly for associated objects to populate the dynamic select
         url: '/' + next_select_id + 's/' + id_value_string,
         timeout: 2000,
         error: function(XMLHttpRequest, errorTextStatus, error){
