@@ -1,12 +1,13 @@
-.grid_6
+= header('Welcome to Chromalog') do
   - if anybody_signed_in?
-    %h1 Welcome to Chromalog
-    %h2 
-      To get started:
-      %ul
-        %li Add instruments, methods, and analytes.
-        %li Assign columns to those instruments.
-        %li Log stuff!
+    Welcome!
+    / %h1 Welcome to Chromalog
+    / %h2 
+    /   To get started:
+    /   %ul
+    /     %li Add instruments, methods, and analytes.
+    /     %li Assign columns to those instruments.
+    /     %li Log stuff!
   - else
     %h1
       %p= link_to "Sign up", new_user_registration_path

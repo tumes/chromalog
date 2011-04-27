@@ -1,40 +1,46 @@
-.grid_6
-  %ul.nav.main
-    - if anybody_signed_in?
-      %li
-        %a{ :href => "#" } Log
-        %ul
+%header{ :style => "opacity: 1; "}
+  %div{ :class => "clearfix"}
+    %nav
+      %ul{ :class => "clearfix" }
+        %li
+          %a{ :href => root_path } <strong>Chromalog</strong>
+        - if anybody_signed_in?
           %li
-            %a{ :href => intro_analytical_standards_path } Standard
+            %a{ :href => "#", :class => "arrow-down" } Log
+            %ul
+              %li
+                %a{ :href => intro_analytical_standards_path } Standard
+              %li
+                %a{ :href => intro_run_logs_path } Run
+              %li
+                %a{ :href => new_maintenance_event_path } Maintenance
           %li
-            %a{ :href => intro_run_logs_path } Run
+            %a{ :href => "#", :class => "arrow-down" } View
+            %ul
+              %li
+                %a{ :href => run_logs_path } Run Logs
+              %li
+                %a{ :href => analytical_standards_path } Standards
+              %li
+                %a{ :href => maintenance_events_path } Maintenances
+              %li
+                %a{ :href => chromatographic_columns_path } Columns
+              %li
+                %a{ :href => instruments_path } Instruments
           %li
-            %a{ :href => new_maintenance_event_path } Maintenance
-      %li
-        %a{ :href => "#" } View
-        %ul
+            %a{ :href => "#", :class => "arrow-down" } Add
+            %ul
+              %li
+                %a{ :href => new_chromatographic_column_path } Columns
+              %li
+                %a{ :href => new_instrument_path } Instruments
           %li
-            %a{ :href => run_logs_path } Run Logs
-          %li
-            %a{ :href => analytical_standards_path } Standards
-          %li
-            %a{ :href => maintenance_events_path } Maintenances
-          %li
-            %a{ :href => chromatographic_columns_path } Columns
-          %li
-            %a{ :href => instruments_path } Instruments
-      %li
-        %a{ :href => "#" } Add
-        %ul
-          %li
-            %a{ :href => new_chromatographic_column_path } Columns
-          %li
-            %a{ :href => new_instrument_path } Instruments
-      %li
-        %a{ :href => "#" } Reporterator
-        %ul
-          %li
-            %a{ :href => "#" } Coming soon!
-      %li.secondary
-        %a{ :href => destroy_user_session_path } Sign out
-.clear
+            %a{ :href => "#", :class => "arrow-down" } Reporterator
+            %ul
+              %li
+                %a{ :href => "#" } Coming soon!           
+          %li{ :class => "fr" }
+            %a{ :href => destroy_user_session_path } Sign out
+          %li{ :class => "fr"}
+            = render :partial => 'layouts/flash_bar'
+       

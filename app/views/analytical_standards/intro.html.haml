@@ -1,6 +1,6 @@
 - title "Start Standard"
 
-.grid_6
+= header('Log a Standard') do
   .ajaxy_intro
     = form_tag new_analytical_standard_path, :method => 'get' do
       %p
@@ -11,3 +11,4 @@
         = select_tag :analytical_method
       = submit_tag "Start standard log", :disable_with => "Starting", :id => "standard_submit"
   %div{ :class => "ajaxy_form display-none" }
+    

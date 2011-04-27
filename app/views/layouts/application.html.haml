@@ -1,20 +1,20 @@
 !!!
 %html
   %head
-    %meta{ :name => 'viewport', :content => 'width=500'} 
     %title= content_for?(:title) ? "Chromalog | #{content_for(:title)}" : "Chromalog"
     = render :partial => 'layouts/stylesheets'
     = render :partial => 'layouts/javascript'
   %body
-    .container_6
-      = render :partial => 'layouts/branding' 
+    #wrapper
       = render :partial => 'layouts/nav_bar' 
-      = render :partial => 'layouts/flash_bar' 
-      / .grid_6
-      .spacer
-      #section_to_print
-        = yield 
-      .clear
-      .spacer
-      -if Rails.env.development?
-        = debug(params) 
+      %section
+        %div{ :class => "container_8 clearfix" }
+          %section{ :class => "main-section grid_8" }
+            %section{ :class => "main-content grid_2 alpha" }
+            %section{ :class => "main-content grid_4"}
+              = yield 
+            %section{ :class => "main-content grid_2 omega"}
+          %section{ :class => "main-section grid_8"}
+            -if Rails.env.development?
+              = debug(params) 
+    %footer

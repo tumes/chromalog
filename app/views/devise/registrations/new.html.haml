@@ -1,7 +1,6 @@
 - title "New user"
 
-.grid_6
-  %h1 Sign up
+= header('Sign Up') do
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
     %p
       = f.label :email

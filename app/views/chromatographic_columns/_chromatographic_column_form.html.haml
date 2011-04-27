@@ -1,8 +1,8 @@
 = simple_form_for @chromatographic_column do |f|
   = f.input :name
   - if @chromatographic_column.new_record?
-    = f.association :instrument, :input_html => { :id => 'instrument' }, :prompt => "Select one"
-    = f.input :analytical_method_id, :collection => [], :as => :select, :input_html => { :id => 'method' }
+    = f.association :instrument, :input_html => { :id => 'instrument', :class => "dynamic_select" }, :prompt => "Select one"
+    = f.input :analytical_method_id, :collection => [], :as => :select, :input_html => { :id => 'analytical_method' }
   -else 
     %p
       %label

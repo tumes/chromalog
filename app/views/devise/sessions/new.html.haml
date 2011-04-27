@@ -1,7 +1,6 @@
 - title "Sign in"
 
-.grid_6
-  %h1 Sign in
+= header('Sign In') do
   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     %p
       = f.label :email
