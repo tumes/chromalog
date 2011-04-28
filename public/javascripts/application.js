@@ -1,5 +1,20 @@
 $(document).ready(function() {
   
+  $("span.editlink a").click( function() {
+    var edit_url = $(this).attr("href");
+    $(".main-content.grid_2.alpha").animate({
+      width: "0%"
+    }, 200, function() {
+      $(this).remove();
+    });
+    $(".main-content.grid_4").addClass("alpha");
+    var new_div = $(".main-content.grid_2").removeClass('grid_2 omega').addClass('grid_4 omega');
+    $.get(edit_url + ".js", function(data) {
+      new_div.html("<header><h2>Edit Instrument</h2></header><section class='clearfix'>" + data + "</section>").toggle().slideDown(200);
+    });
+    return false
+  });
+  
   $(".ajaxy_intro form").live("submit", function(){
     var queryString = $(this).serialize();
     var url = $(this).attr("action");

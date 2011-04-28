@@ -1,10 +1,17 @@
 class InstrumentsController < InheritedResources::Base
   before_filter :authenticate_user!
   respond_to :html
-  respond_to :js, :only => :index
+  respond_to :js, :only => [:index, :edit]
   
   def create
     create!(:notice => 'New instrument created.') { instruments_path }
+  end
+  
+  def edit
+    edit! do |format|
+      format.js { render :partial => "instrument_form" }
+      format.html
+    end
   end
   
   def update
@@ -14,7 +21,7 @@ class InstrumentsController < InheritedResources::Base
   def show
     show! do |format|
       format.html
-      format.js { associated_methods_lookup }
+      format.json { associated_methods_lookup }
     end
   end
   

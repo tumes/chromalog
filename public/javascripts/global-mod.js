@@ -32,22 +32,22 @@ $(document).ready(function() {
     /**
      * Main Menu Shortcuts Toggle
      */
-    $('.chevron').click(function(){
-        if ($(this).hasClass('toggle-up')) {
-            if (!$.browser.msie) {
-                $('.shortcuts').slideUp();
-            } else {
-                $('.shortcuts').hide();
-            }
-        } else {
-            if (!$.browser.msie) {
-                $('.shortcuts').slideDown();
-            } else {
-                $('.shortcuts').show();
-            }
-        }
-        $(this).toggleClass('toggle-up');
-    });
+    // $('.chevron').click(function(){
+    //     if ($(this).hasClass('toggle-up')) {
+    //         if (!$.browser.msie) {
+    //             $('.shortcuts').slideUp();
+    //         } else {
+    //             $('.shortcuts').hide();
+    //         }
+    //     } else {
+    //         if (!$.browser.msie) {
+    //             $('.shortcuts').slideDown();
+    //         } else {
+    //             $('.shortcuts').show();
+    //         }
+    //     }
+    //     $(this).toggleClass('toggle-up');
+    // });
 
     /**
      * Skin select elements

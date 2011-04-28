@@ -5,14 +5,21 @@ class ChromatographicColumnsController < InheritedResources::Base
     create!(:notice => 'New column added.') { chromatographic_columns_path }
   end
   
+  def edit
+    edit! do |format|
+      format.js { render :partial => "chromatographic_column_form" }
+      format.html
+    end
+  end
+  
   def update
-    update!(:notice => 'Column successfull edited') { chromatographic_columns_path }
+    update!(:notice => 'Column successfully edited.') { chromatographic_columns_path }
   end
   
   def show
     show! do |format|
       format.html
-      format.js { associated_columns_lookup }
+      format.json { associated_columns_lookup }
     end
   end
   
