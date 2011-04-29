@@ -10,6 +10,7 @@ gem 'simple_form'
 gem 'nested_form'
 gem 'cocoon'
 gem 'decent_exposure'
+gem 'dynamic_form'
 
 group :development do
   gem 'hpricot'

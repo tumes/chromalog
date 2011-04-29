@@ -10,7 +10,7 @@
     %bigtext @
     = f.text_field :flow_rate, :as => :string, :size => 3
     %bigtext mL/min
-  
+    
     = render :partial => 'run_log_level', :collection => @levels, :as => :level, :locals => { :f => f }
 
 

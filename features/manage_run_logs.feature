@@ -19,3 +19,4 @@ Feature: Manage users
     And I fill it "Analyte" with "3"
     And I press "Create Run log"
     Then I should be on the homepage
+    

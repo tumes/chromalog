@@ -1,20 +1,39 @@
 $(document).ready(function() {
   
-  $("span.editlink a").click( function() {
+  // AJAX and slide in edit window
+  var first_run = true
+  $("span.editlink a").live( 'click', function() {
     var edit_url = $(this).attr("href");
-    $(".main-content.grid_2.alpha").animate({
-      width: "0%"
-    }, 200, function() {
-      $(this).remove();
-    });
-    $(".main-content.grid_4").addClass("alpha");
-    var new_div = $(".main-content.grid_2").removeClass('grid_2 omega').addClass('grid_4 omega');
-    $.get(edit_url + ".js", function(data) {
-      new_div.html("<header><h2>Edit Instrument</h2></header><section class='clearfix'>" + data + "</section>").toggle().slideDown(200);
-    });
+    if(first_run) {
+      $(".main-content.grid_2.alpha").animate({
+        width: "0%"
+      }, 200, function() {
+        $(this).remove();
+      });
+      $(".main-content.grid_4").addClass("alpha");
+      var new_div = $(".main-content.grid_2").removeClass('grid_2 omega').addClass('grid_4 omega');
+      $.get(edit_url + ".js", function(data) {
+        new_div.html("<header><h2>Edit Instrument</h2></header><section class='clearfix' id='ajaxed_in'>" + data + "</section>").toggle().slideDown(200);
+      });
+      first_run = false
+    } else {
+      $("section#ajaxed_in").slideUp('fast', function() {
+        $.get(edit_url + ".js", function(data) {
+          $("section#ajaxed_in").html(data).slideDown(200);
+        });
+      });
+    };
     return false
   });
   
+  // Fade out flash messages
+  setTimeout(function() {
+    $("div.message").fadeOut('slow', function(){
+      $(this).remove();
+    });
+  }, 2000);
+  
+  // AJAX in intro-dependent form and tabulate form
   $(".ajaxy_intro form").live("submit", function(){
     var queryString = $(this).serialize();
     var url = $(this).attr("action");
@@ -48,6 +67,7 @@ $(document).ready(function() {
     return false;
   });
   
+  // Dynamic selects
   $("p .dynamic_select").change(function(){
     var next_select = $(this).parent().next().children('select');
     var next_select_id = $(next_select).attr('id');

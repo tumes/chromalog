@@ -3,7 +3,7 @@
     %nav
       %ul{ :class => "clearfix" }
         %li
-          %a{ :href => root_path } <strong>Chromalog</strong>
+          %a{ :href => root_path, :class => "logo" } <strong>Chromalog</strong>
         - if anybody_signed_in?
           %li
             %a{ :href => "#", :class => "arrow-down" } Log

@@ -47,6 +47,11 @@ Given /^I visit the standard logs page$/ do
   visit('/analytical_standards/intro')
 end
 
+Given /^I visit the instruments index$/ do
+  visit instruments_path
+end
+
+
 
 
 

@@ -75,48 +75,48 @@ $(document).ready(function() {
     /**
      * Skin file input elements
      */
-    $(':file').each(function(){
-        var file = this;
-        $(this).attr('size', 25).wrap('<span class="ui-file" />')
-            .before('<span class="ui-file-value">No file chosen</span><button class="ui-file-button button button-gray">Browse...</button>')
-            .change(function(){
-                $(file).parent().find('.ui-file-value').html($(this).val()? $(this).val() : 'No file chosen');
-            })
-            .hover(
-                function(){ $(file).prev().addClass('hover');},
-                function(){ $(file).prev().removeClass('hover');}
-            ).mousedown(function(){$(file).prev().addClass('active');})
-            .bind('mouseup mouseleave', function(){$(file).prev().removeClass('active');})
-            .parent().disableSelection();
-    });
+    // $(':file').each(function(){
+    //     var file = this;
+    //     $(this).attr('size', 25).wrap('<span class="ui-file" />')
+    //         .before('<span class="ui-file-value">No file chosen</span><button class="ui-file-button button button-gray">Browse...</button>')
+    //         .change(function(){
+    //             $(file).parent().find('.ui-file-value').html($(this).val()? $(this).val() : 'No file chosen');
+    //         })
+    //         .hover(
+    //             function(){ $(file).prev().addClass('hover');},
+    //             function(){ $(file).prev().removeClass('hover');}
+    //         ).mousedown(function(){$(file).prev().addClass('active');})
+    //         .bind('mouseup mouseleave', function(){$(file).prev().removeClass('active');})
+    //         .parent().disableSelection();
+    // });
 
     /**
      * Setup tooltips
      */
-    $('[title]').tooltip({
-        effect: 'slide', offset: [-14, 0], position: 'top center', layout: '<div><em/></div>',
-        onBeforeShow: function() {
-            this.getTip().each(function(){
-                if ($.browser.msie) {
-                    PIE.attach(this);
-                }
-            });
-        },
-        onHide: function() {
-            this.getTip().each(function(){
-                if ($.browser.msie) {
-                    PIE.detach(this);
-                }
-            });
-        }
-    }).dynamic({
-            bottom: { direction: 'down', bounce: true }
-    });
+    // $('[title]').tooltip({
+    //     effect: 'slide', offset: [-14, 0], position: 'top center', layout: '<div><em/></div>',
+    //     onBeforeShow: function() {
+    //         this.getTip().each(function(){
+    //             if ($.browser.msie) {
+    //                 PIE.attach(this);
+    //             }
+    //         });
+    //     },
+    //     onHide: function() {
+    //         this.getTip().each(function(){
+    //             if ($.browser.msie) {
+    //                 PIE.detach(this);
+    //             }
+    //         });
+    //     }
+    // }).dynamic({
+    //         bottom: { direction: 'down', bounce: true }
+    // });
 
     /**
      * Setup the Accordions
      */
-    $(".accordion").tabs(".accordion section", {tabs: 'header', effect: 'slide', initialIndex: null});
+    // $(".accordion").tabs(".accordion section", {tabs: 'header', effect: 'slide', initialIndex: null});
 
     /**
      * Setup the Tabs
@@ -126,146 +126,146 @@ $(document).ready(function() {
     /**
      * Setup the Sidebar tabs
      */
-    $("ul.sidebar-tabs").tabs("div.panes > section");
+    // $("ul.sidebar-tabs").tabs("div.panes > section");
     
     /**
      * Textbox Placeholder
      */
-    $('input[placeholder]').placeholder();
+    // $('input[placeholder]').placeholder();
 
     /**
      * attach calendar to date inputs
      */
-    $(":date")
-		.wrap('<span class="ui-date" />')
-        .dateinput({trigger: true, format: 'mm/dd/yyyy', selectors: true})
-        .focus(function(){$(this).parent().addClass('ui-focused'); return false;})
-        .blur(function(){$(this).parent().removeClass('ui-focused'); return false;});
+    //     $(":date")
+    // .wrap('<span class="ui-date" />')
+    //         .dateinput({trigger: true, format: 'mm/dd/yyyy', selectors: true})
+    //         .focus(function(){$(this).parent().addClass('ui-focused'); return false;})
+    //         .blur(function(){$(this).parent().removeClass('ui-focused'); return false;});
 
     /**
      * add close buttons to closeable message boxes
      */
-    $(".message.closeable").prepend('<span class="message-close"></span>')
-        .find('.message-close')
-        .click(function(){
-            $(this).parent().fadeOut(function(){$(this).remove();});
-        });
+    // $(".message.closeable").prepend('<span class="message-close"></span>')
+    //     .find('.message-close')
+    //     .click(function(){
+    //         $(this).parent().fadeOut(function(){$(this).remove();});
+    //     });
 
     /**
      * setup popup balloons (add contact / add task)
      */
-    $('.has-popupballoon').click(function(){
-        // close all open popup balloons
-        $('.popupballoon').fadeOut();
-        $(this).next().fadeIn();
-        return false;
-    });
-
-    $('.popupballoon .close').click(function(){
-        $(this).parents('.popupballoon').fadeOut();
-    });
+    // $('.has-popupballoon').click(function(){
+    //     // close all open popup balloons
+    //     $('.popupballoon').fadeOut();
+    //     $(this).next().fadeIn();
+    //     return false;
+    // });
+    // 
+    // $('.popupballoon .close').click(function(){
+    //     $(this).parents('.popupballoon').fadeOut();
+    // });
 
     /**
      * floating menu
      */
-    if ($('#wrapper > header').length>0) { menuYloc = parseInt($('#wrapper > header').css("top").substring(0,$('#wrapper > header').css("top").indexOf("px")), 10); }
-    $(window).scroll(function () {
-        var offset = 0;
-        if ($('#wrapper > header').length>0) {
-            offset = menuYloc+$(document).scrollTop();
-            if (!$.browser.msie) { $('#wrapper > header').animate({opacity: ($(document).scrollTop()<=10? 1 : 0.8)}); }
-        }
-    });
-
-    if (!$.browser.msie) {
-        $('#wrapper > header').hover(
-            function(){$(this).animate({opacity: 1});},
-            function(){$(this).animate({opacity: ($(document).scrollTop()<=10? 1 : 0.8)});}
-        );
-    }
+    // if ($('#wrapper > header').length>0) { menuYloc = parseInt($('#wrapper > header').css("top").substring(0,$('#wrapper > header').css("top").indexOf("px")), 10); }
+    // $(window).scroll(function () {
+    //     var offset = 0;
+    //     if ($('#wrapper > header').length>0) {
+    //         offset = menuYloc+$(document).scrollTop();
+    //         if (!$.browser.msie) { $('#wrapper > header').animate({opacity: ($(document).scrollTop()<=10? 1 : 0.8)}); }
+    //     }
+    // });
+    // 
+    // if (!$.browser.msie) {
+    //     $('#wrapper > header').hover(
+    //         function(){$(this).animate({opacity: 1});},
+    //         function(){$(this).animate({opacity: ($(document).scrollTop()<=10? 1 : 0.8)});}
+    //     );
+    // }
 
     /**
      * html element for the help popup
      */
-    $('body').append('<div class="apple_overlay black" id="overlay"><iframe class="contentWrap" style="width: 100%; height: 500px"></iframe></div>');
+    // $('body').append('<div class="apple_overlay black" id="overlay"><iframe class="contentWrap" style="width: 100%; height: 500px"></iframe></div>');
 
     /**
      * this is the help popup
      */
-    $("a.help[rel]").overlay({
-
-        effect: 'apple',
-
-        onBeforeLoad: function() {
-
-            // grab wrapper element inside content
-            var wrap = this.getOverlay().find(".contentWrap");
-
-            // load the page specified in the trigger
-            wrap.attr('src', this.getTrigger().attr("href"));
-        }
-
-    });
+    // $("a.help[rel]").overlay({
+    // 
+    //     effect: 'apple',
+    // 
+    //     onBeforeLoad: function() {
+    // 
+    //         // grab wrapper element inside content
+    //         var wrap = this.getOverlay().find(".contentWrap");
+    // 
+    //         // load the page specified in the trigger
+    //         wrap.attr('src', this.getTrigger().attr("href"));
+    //     }
+    // 
+    // });
 
     /**
      * Form Validators
      */
     // Regular Expression to test whether the value is valid
-    $.tools.validator.fn("[type=time]", "Please supply a valid time", function(input, value) { 
-        return (/^\d\d:\d\d$/).test(value);
-    });
-
-    $.tools.validator.fn("[data-equals]", "Value not equal with the $1 field", function(input) {
-        var name = input.attr("data-equals"),
-        field = this.getInputs().filter("[name=" + name + "]"); 
-        return input.val() === field.val() ? true : [name]; 
-    });
-     
-    $.tools.validator.fn("[minlength]", function(input, value) {
-        var min = input.attr("minlength");
-        
-        return value.length >= min ? true : {     
-            en: "Please provide at least " +min+ " character" + (min > 1 ? "s" : "")
-        };
-    });
-     
-    $.tools.validator.localizeFn("[type=time]", {
-        en: 'Please supply a valid time'
-    });
+    // $.tools.validator.fn("[type=time]", "Please supply a valid time", function(input, value) { 
+    //     return (/^\d\d:\d\d$/).test(value);
+    // });
+    // 
+    // $.tools.validator.fn("[data-equals]", "Value not equal with the $1 field", function(input) {
+    //     var name = input.attr("data-equals"),
+    //     field = this.getInputs().filter("[name=" + name + "]"); 
+    //     return input.val() === field.val() ? true : [name]; 
+    // });
+    //  
+    // $.tools.validator.fn("[minlength]", function(input, value) {
+    //     var min = input.attr("minlength");
+    //     
+    //     return value.length >= min ? true : {     
+    //         en: "Please provide at least " +min+ " character" + (min > 1 ? "s" : "")
+    //     };
+    // });
+    //  
+    // $.tools.validator.localizeFn("[type=time]", {
+    //     en: 'Please supply a valid time'
+    // });
      
     /**
      * setup the validators
      */
-    $(".form").validator({ 
-        position: 'bottom left', 
-        offset: [5, 0],
-        messageClass:'form-error',
-        message: '<div><em/></div>' // em element is the arrow
-    }).attr('novalidate', 'novalidate');
-
-    if ($(sortableName).sortable) {
-        $(sortableName).sortable({
-            cursor: 'move',
-            revert: 500,
-            opacity: 0.7,
-            appendTo: 'body',
-            handle: 'header',
-            items: '.widget-container[draggable=true]',
-            placeholder: 'widget-placeholder grid_2',
-            forcePlaceholderSize: true,
-            start: function(event, ui) {
-                ui.item.addClass('start-drag');
-            },
-            stop: function(event, ui) {
-                ui.item.removeClass('start-drag');
-            },
-            update: function(event, ui) {
-                if ($.cookie) {
-                    $.cookie(sortableCookie, $(this).sortable("toArray"), { expires: sortableCookieExpiry, path: "/" });
-                }
-            }
-        }).disableSelection();
-    }
+    // $(".form").validator({ 
+    //     position: 'bottom left', 
+    //     offset: [5, 0],
+    //     messageClass:'form-error',
+    //     message: '<div><em/></div>' // em element is the arrow
+    // }).attr('novalidate', 'novalidate');
+    // 
+    // if ($(sortableName).sortable) {
+    //     $(sortableName).sortable({
+    //         cursor: 'move',
+    //         revert: 500,
+    //         opacity: 0.7,
+    //         appendTo: 'body',
+    //         handle: 'header',
+    //         items: '.widget-container[draggable=true]',
+    //         placeholder: 'widget-placeholder grid_2',
+    //         forcePlaceholderSize: true,
+    //         start: function(event, ui) {
+    //             ui.item.addClass('start-drag');
+    //         },
+    //         stop: function(event, ui) {
+    //             ui.item.removeClass('start-drag');
+    //         },
+    //         update: function(event, ui) {
+    //             if ($.cookie) {
+    //                 $.cookie(sortableCookie, $(this).sortable("toArray"), { expires: sortableCookieExpiry, path: "/" });
+    //             }
+    //         }
+    //     }).disableSelection();
+    // }
 
     /**
      * restore the order of sortable widgets
