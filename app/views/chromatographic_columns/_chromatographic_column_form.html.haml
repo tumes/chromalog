@@ -1,8 +1,8 @@
 = simple_form_for @chromatographic_column do |f|
   = f.input :name
   - if @chromatographic_column.new_record?
-    = f.association :instrument, :input_html => { :id => 'instrument', :class => "dynamic_select" }, :prompt => "Select one"
-    = f.input :analytical_method_id, :collection => [], :as => :select, :input_html => { :id => 'analytical_method' }
+    = f.association :instrument, :input_html => { :id => 'instrument', :class => "dynamic_select" }, :prompt => "Start here"
+    = f.input :analytical_method_id, :collection => [], :as => :select, :input_html => { :id => 'analytical_method' }, :prompt => "Select an instrument first"
   -else 
     %p
       %label
@@ -18,4 +18,8 @@
   = f.input :serial    
   = f.input :received
   = f.input :notes, :input_html => { :rows => 2, :cols => 40 }
+  %p
+    = f.label :decomissioned, "Decomissioned?"
+    = f.check_box :decomissioned, {}, "true"
+    Yes
   = f.submit @chromatographic_column.new_record? ? 'Add column' : 'Edit column', :disable_with => "Submitting..."

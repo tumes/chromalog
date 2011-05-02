@@ -1,12 +1,8 @@
 - title "Sign in"
 
 = header('Sign In') do
-  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form'}) do |f|
-    .clearfix
-      = f.label :email
-      = f.text_field :email
-    %p
-      = f.label :password
-      = f.password_field :password
+  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    = f.input :email
+    = f.input :password
     %p= f.submit 'Sign in', :disable_with => "Submitting..."
 

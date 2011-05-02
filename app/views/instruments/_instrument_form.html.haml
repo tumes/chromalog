@@ -1,30 +1,26 @@
 = nested_form_for @instrument do |f|
   = f.label :name
   = f.text_field :name
-  / = f.input :name
+  
   
   = f.fields_for :analytical_methods do |analytical_method|
-    = analytical_method.text_field :name
-    = analytical_method.link_to_remove "Remove this method"
-    = analytical_method.fields_for :analytes do |analyte|
-      = analyte.text_field :name
-      = analyte.link_to_remove "Remove this analyte"
-    = analytical_method.link_to_add "Add an analyte", :analytes
-  = f.link_to_add "Add an analytical method", :analytical_methods
-  / #analytical_methods
-  /   = f.simple_fields_for :analytical_methods do |analytical_method|
-  /     = render 'analytical_method_fields', :f => analytical_method
-  /   = f.error :analytical_methods
-  /   .links
-  /     =link_to_add_association 'Add method', f, :analytical_methods
-  / %p
-  /   = f.simple_fields_for :analytical_methods do |analytical_method|
-  /     = render 'analytical_method_fields', :f => analytical_method
-  /   = f.error :analytical_methods
-  /   %div{:id=>"new-methods"}
-  /   .links
-  /     =link_to_add_association 'Add method', f, :analytical_methods
+    .analytical_method_field
+      = analytical_method.label :name, "Method"
+      = analytical_method.text_field :name
+      = analytical_method.link_to_remove image_tag("minus.png")
+      = analytical_method.fields_for :analytes do |analyte|
+        .analyte_field
+          = analyte.label :name, "Analyte"
+          = analyte.text_field :name
+          = analyte.link_to_remove image_tag("minus.png")
+      = analytical_method.link_to_add content_tag(:span, nil, :class => "add") + 'Analyte', :analytes
+  = f.link_to_add content_tag(:span, nil, :class => "add") + 'Method', :analytical_methods
+    
+  %br/  
   = f.submit @instrument.new_record? ? 'Create instrument' : 'Update Instrument', :disable_with => "Submitting..."
+  
+
+
   
 
   

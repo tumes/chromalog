@@ -22,11 +22,10 @@ Given /^I am an authenticated user$/ do
     When %{I press "Sign in"}
 end
 
-Given /^I am a signed out, registered user$/ do
+Given /^I am a registered user with the email "([^"]*)" and password "([^"]*)"$/ do |arg1, arg2|
   Factory(:user)
-  visit('users/sign_out')
-  visit('/')
 end
+
 
 Given /^I visit the run logs page$/ do
   visit('/run_logs/intro')
@@ -36,13 +35,6 @@ Given /^I wait for (\d+) seconds$/ do |arg1|
   sleep arg1.to_i
 end
 
-Given /^the database is seeded with a test instrument, method, and column$/ do
-  Factory(:instrument)
-  Factory(:analytical_method)
-  Factory(:analyte)
-  Factory(:chromatographic_column)
-end
-
 Given /^I visit the standard logs page$/ do
   visit('/analytical_standards/intro')
 end
@@ -50,6 +42,35 @@ end
 Given /^I visit the instruments index$/ do
   visit instruments_path
 end
+
+When /^I choose "([^"]*)" for the "([^"]*)"$/ do |arg1, arg2|
+  choose(arg1)
+end
+
+When /^I follow Add "([^"]*)"$/ do |arg1|
+  visit new_instrument_path
+end
+
+Given /^there is an instrument called "([^"]*)" with a method called "([^"]*)" with an analyte called "([^"]*)"$/ do |arg1, arg2, arg3|
+  Factory(:instrument)
+end
+
+
+When /^I follow View "([^"]*)"$/ do |arg1|
+ visit instruments_path
+end
+
+Given /^there is a chromatographic column called "([^"]*)"$/ do |arg1|
+  Factory(:chromatographic_column)
+end
+
+
+
+
+
+
+
+
 
 
 

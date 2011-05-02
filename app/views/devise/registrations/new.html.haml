@@ -21,12 +21,12 @@
       = f.password_field :password_confirmation
       = f.error :password_confirmation
     = f.input :security_code
-    = f.input :terms_of_service, :as => :radio
-    / %p
-    /   = f.label :terms_of_service
-    /   By checking this box you agree that...
-    /   %br/
-    /   I agree
-    /   = f.check_box :terms_of_service, :input_html => { :value => 'true' }
-    /   = f.error :terms_of_service
+    / = f.input :terms_of_service, :as => :radio
+    %p
+      = f.label :terms_of_service
+      By agreeing to the terms of service you are affirming that all records your keep in Chromalog are truthful and complete and that all submissions to Chromalog are equivalent to logs kept in your laboratory notebook.
+      %br/
+      = f.check_box :terms_of_service, {}, "true"
+      I agree
+      = f.error :terms_of_service
     = f.submit 'Sign up', :disable_with => "Submitting..."

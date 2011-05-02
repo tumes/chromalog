@@ -6,7 +6,8 @@ Feature: Manage users
   @javascript
   Scenario: Logging a new run
     Given I am an authenticated user
-    And the database is seeded with a test instrument, method, and column
+    And there is an instrument called "Test instrument" with a method called "Test method" with an analyte called "Test analyte"    
+    And there is a chromatographic column called "Test column"
     And I visit the run logs page
     And I select "Test instrument" from "Instrument"
     And I select "Test method" from "Method"

@@ -1,6 +1,8 @@
 %div{ :id => "level" }
-  .polaroid-border
-    .polaroid-block
+  .main-content.grid_3#form_element
+    %header
+      %h2= "Level #{level_counter + 1}"
+    %section.clearfix
       %h2= "Snapshot for #{@instrument.name} #{@method.name}"
       = label_tag "Std Conc"
       = text_field_tag "run_log[calibration_levels_attributes][#{level_counter}][standard_conc]"
@@ -9,7 +11,7 @@
           %th Analyte
           %th Area Count
           = render :partial => 'analyte_row', :collection => @method.analytes, :as => :analyte, :locals => { :level_counter => :level_counter }
-      
+
       .lowbuttons
         - unless level_counter + 1 == @levels.first
           %a{ :id => "back", :href => "#" } <

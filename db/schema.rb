@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(:version => 20110405210850) do
   end
 
   create_table "analytical_standards", :force => true do |t|
-    t.integer  "analytical_method_id"
-    t.integer  "user_id"
+    t.string   "analytical_method"
+    t.string   "user"
     t.date     "preparation_date"
-    t.decimal  "volume",               :precision => 12, :scale => 4
+    t.decimal  "volume",            :precision => 12, :scale => 4
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20110405210850) do
     t.string   "serial"
     t.date     "received"
     t.text     "notes"
+    t.boolean  "decomissioned"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -87,11 +88,11 @@ ActiveRecord::Schema.define(:version => 20110405210850) do
 
   create_table "run_logs", :force => true do |t|
     t.integer  "instrument_id"
-    t.integer  "analytical_method_id"
-    t.integer  "chromatographic_column_id"
+    t.string   "analytical_method"
+    t.string   "chromatographic_column"
     t.date     "run_date"
-    t.decimal  "pressure",                  :precision => 12, :scale => 4
-    t.decimal  "flow_rate",                 :precision => 12, :scale => 4
+    t.decimal  "pressure",               :precision => 12, :scale => 4
+    t.decimal  "flow_rate",              :precision => 12, :scale => 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end

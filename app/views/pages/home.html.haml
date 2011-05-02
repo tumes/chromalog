@@ -1,15 +1,21 @@
 = header('Welcome to Chromalog') do
   - if anybody_signed_in?
-    Welcome!
-    / %h1 Welcome to Chromalog
-    / %h2 
-    /   To get started:
-    /   %ul
-    /     %li Add instruments, methods, and analytes.
-    /     %li Assign columns to those instruments.
-    /     %li Log stuff!
+    %h2
+      Welcome to Chromalog!
+      %br/
+      %br/
+      To get started:
+      %br/
+      %br/
+      %ul
+        %li Create some instruments.
+        %br/
+        %li Add some columns to those instruments.
+        %br/
+        %li Log stuff!
   - else
-    %h1
-      %p= link_to "Sign up", new_user_registration_path
-      %p= link_to "Sign in", new_user_session_path
+    .centered
+      %h1
+        %p= link_to "Sign up", new_user_registration_path
+        %p= link_to "Sign in", new_user_session_path
 

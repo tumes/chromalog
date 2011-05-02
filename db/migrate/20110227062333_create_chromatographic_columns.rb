@@ -9,6 +9,7 @@ class CreateChromatographicColumns < ActiveRecord::Migration
       t.string :serial
       t.date :received
       t.text :notes
+      t.boolean :decomissioned
 
       t.timestamps
     end

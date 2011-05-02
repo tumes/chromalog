@@ -7,19 +7,20 @@ $(document).ready(function() {
     if(first_run) {
       $(".main-content.grid_2.alpha").animate({
         width: "0%"
-      }, 200, function() {
+      }, 400, function() {
         $(this).remove();
       });
       $(".main-content.grid_4").addClass("alpha");
       var new_div = $(".main-content.grid_2").removeClass('grid_2 omega').addClass('grid_4 omega');
+      // $(new_div).load(edit_url + ' .ajaxable')
       $.get(edit_url + ".js", function(data) {
-        new_div.html("<header><h2>Edit Instrument</h2></header><section class='clearfix' id='ajaxed_in'>" + data + "</section>").toggle().slideDown(200);
+        new_div.html("<header><h2>Edit Instrument</h2></header><section class='clearfix' id='ajaxed_in'>" + data + "</section>").toggle().slideDown(400);
       });
       first_run = false
     } else {
       $("section#ajaxed_in").slideUp('fast', function() {
         $.get(edit_url + ".js", function(data) {
-          $("section#ajaxed_in").html(data).slideDown(200);
+          $("section#ajaxed_in").html(data).slideDown(400);
         });
       });
     };
@@ -104,5 +105,6 @@ $(document).ready(function() {
          }
       });
     };
-  });            
+  });    
+  
 });

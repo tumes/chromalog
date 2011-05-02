@@ -8,17 +8,17 @@ Factory.define :user do |user|
 end
 
 Factory.define :analyte do |analyte|
-  analyte.name "Analyte"
+  analyte.name "Test analyte"
 end
 
 Factory.define :analytical_method do |analytical_method|
   analytical_method.name "Test method"
-  analytical_method.analytes [Factory(:analyte)]
+  analytical_method.analytes {|analytes| [analytes.association(:analyte)]}
 end
 
 Factory.define :instrument do |instrument|
   instrument.name "Test instrument"
-  instrument.analytical_methods [Factory(:analytical_method)]
+  instrument.analytical_methods {|analytical_methods| [analytical_methods.association(:analytical_method)]}
 end
 
 Factory.define :chromatographic_column do |column|

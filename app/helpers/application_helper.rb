@@ -7,4 +7,5 @@ module ApplicationHelper
     content_tag(:header, content_tag(:h2, "#{header}")) + 
     content_tag(:section, :class => "clearfix", &block)
   end
+  
 end

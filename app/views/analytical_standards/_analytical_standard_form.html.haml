@@ -1,20 +1,23 @@
 = simple_form_for @analytical_standard do |f|
 
-  = f.hidden_field :analytical_method_id, :value => params[:analytical_method]
-  = f.input :user_id, :label => "Prepared by", :collection => users, :as => :select
+  = f.hidden_field :analytical_method_id, :value => @method.name
+  = f.input :user, :label => "Prepared by", :collection => users, :as => :select
   = f.input :preparation_date, :label => "Preparation date"
-  = f.input :volume, :as => :string
+  %p
+    = f.label :volumne, "Volume (mL)"
+    = f.text_field :volume
+    = f.error :volume
   = f.input :notes, :input_html => { :rows => 2, :cols => 40 }
-    
-  .polaroid-border
-    .polaroid-block
+  
+  .main-content.grid_3#form_element
+    %header
       %h2= "Standard for #{@method.name}"
+    %section.clearfix
       %table
         %tr
           %th Analyte
           %th Amount(g)
           %th Batch  
           = render :partial => 'analyte_row', :collection => @method.analytes, :as => :analyte
-          
-      .lowbuttons
-        = f.submit @analytical_standard.new_record? ? 'Log Standard' : 'Update Standard', :disable_with => "Submitting..."
+      
+  = f.submit @analytical_standard.new_record? ? 'Log Standard' : 'Update Standard', :disable_with => "Submitting..."

@@ -1,7 +1,7 @@
 /**
  * Buttons
  */
-.button {
+.button, .add_nested_fields, .lowbuttons a, input[type="submit"] {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     -khtml-border-radius: 3px;
@@ -35,7 +35,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; }
     width: 30px;
 }
 
-.button-gray {
+.button-gray, .add_nested_fields, .lowbuttons a, input[type="submit"] {
     background: #f1f1f1;
     background: -webkit-gradient(linear, left top, left bottom, from(#e9e9e9), to(#d1d1d1));
     background: -moz-linear-gradient(top,  #e9e9e9,  #d1d1d1);
@@ -44,7 +44,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; }
     color: #555;
     text-shadow: 0 1px 0 #fff;
 }
-.button-gray:hover, .button-gray:focus, .button-gray.hover {
+.button-gray:hover, .button-gray:focus, .button-gray.hover, .add_nested_fields, .lowbuttons a, input[type="submit"]  {
     border: 1px solid #aaa;
     background: #ececec;
     background: -webkit-gradient(linear, left top, left bottom, from(#e1e1e1), to(#c1c1c1));
@@ -53,7 +53,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; }
     border: 1px solid #999;
     color: #555;
 }
-.button-gray:active, .button-gray.active, .button-gray.current {
+.button-gray:active, .button-gray.active, .button-gray.current, .add_nested_fields, .lowbuttons a, input[type="submit"]  {
     background: #ddd;
     background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#e9e9e9));
     background: -moz-linear-gradient(top,  #ccc,  #e9e9e9);
@@ -62,7 +62,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; }
     color: #555;
 }
 
-.button-orange {
+/*.button-orange {
     background: #f78d1d;
     background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
     background: -moz-linear-gradient(top, #faa51a, #f47a20);
@@ -163,7 +163,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; }
     background: -moz-linear-gradient(top,  #5c8825,  #8fbb44);
     -pie-background: linear-gradient(top,  #5c8825,  #8fbb44);
     border:1px solid #342;
-}
+}*/
 
 /**
  * Action Buttons
@@ -185,7 +185,7 @@ ul.action-buttons li:first-child {
 ul.action-buttons li:last-child {
     margin-right: 0;
 }
-.button span {
+.button span, .add_nested_fields span {
     display: inline-block;
     float: left;
     *float: none;
@@ -216,7 +216,7 @@ a.button.no-text {
 .button span.accept {
     background: transparent url(../images/icons/accept.png) no-repeat center center;
 }
-.button span.add {
+.button span.add, .add_nested_fields span.add {
     background: transparent url(../images/icons/add.png) no-repeat center center;
 }
 .button span.pencil {
@@ -1354,7 +1354,6 @@ input.large, button.large {
 }
 
 textarea {
-    margin-bottom: 10px;
     position: relative;
 }
 
