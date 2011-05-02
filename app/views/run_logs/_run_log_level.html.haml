@@ -10,7 +10,7 @@
         %tr
           %th Analyte
           %th Area Count
-          = render :partial => 'analyte_row', :collection => @method.analytes, :as => :analyte, :locals => { :level_counter => :level_counter }
+          = render :partial => 'analyte_row', :collection => @method.analytes, :as => :analyte, :locals => { :level_counter => level_counter }
 
       .lowbuttons
         - unless level_counter + 1 == @levels.first

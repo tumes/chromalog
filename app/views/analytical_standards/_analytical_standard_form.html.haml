@@ -1,6 +1,6 @@
 = simple_form_for @analytical_standard do |f|
 
-  = f.hidden_field :analytical_method_id, :value => @method.name
+  = f.hidden_field :analytical_method, :value => @method.name
   = f.input :user, :label => "Prepared by", :collection => users, :as => :select
   = f.input :preparation_date, :label => "Preparation date"
   %p
